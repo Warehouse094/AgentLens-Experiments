@@ -5,7 +5,7 @@ This repository contains the complete experimental data, analysis scripts, and r
 > **AgentLens: A Governance-Oriented Evaluation Framework for AI Agents in Web3 Environments**
 > Submitted to IEEE Transactions on Dependable and Secure Computing (TDSC)
 
-All 27 experiments reported in the paper are reproducible from the materials in this repository.
+All 34 experiments reported in the paper (Exp01–27 plus 7 revision experiments R1–R7) are reproducible from the materials in this repository.
 
 ---
 
@@ -73,7 +73,7 @@ AgentLens-Experiments/
 │   │       ├── expanded_baseline_summary.txt
 │   │       └── tee_positive_state_fallback.json
 │   │
-│   └── final_experiment_report.md     # Consolidated report of all 27 experiments
+│   └── final_experiment_report.md     # Consolidated report of all 34 experiments
 │
 ├── scripts/                           # Figure generation and analysis scripts
 │   ├── style.py                       # Shared matplotlib style settings
@@ -97,7 +97,7 @@ AgentLens-Experiments/
 
 ## Experiment Overview
 
-The 27 experiments are organized around six Research Questions (RQs):
+The 34 experiments are organized around six Research Questions (RQs):
 
 | RQ | Scope | Experiments |
 |----|-------|-------------|
