@@ -2,10 +2,13 @@
 
 This repository contains the complete experimental data, analysis scripts, and result files for the paper:
 
-> **AgentLens: A Governance-Oriented Evaluation Framework for AI Agents in Web3 Environments**
+> **AgentLens: Detecting and Governing AI Agent Failures via Cryptographic Evidence and Verifiable Provenance**
 > Submitted to IEEE Transactions on Dependable and Secure Computing (TDSC)
 
 All 34 experiments reported in the paper (Exp01–27 plus 7 revision experiments R1–R7) are reproducible from the materials in this repository.
+
+The core infrastructure code (AgentLens audit pipeline, TEE attestation module, and ZK proof circuits) is maintained in a separate repository:
+**[https://github.com/ZhangJinHaHaHa/AgentLens](https://github.com/ZhangJinHaHaHa/AgentLens)** (AGPL-3.0)
 
 ---
 
@@ -46,7 +49,7 @@ AgentLens-Experiments/
 │   │   ├── exp17_operational_cost.json
 │   │   └── exp18_long_term_stability.json
 │   │
-│   ├── exp19_27_external_validation/  # Revision experiments (Exp19–27)
+│   ├── exp19_27_external_validation/  # External generalization experiments (Exp19–27)
 │   │   ├── scripts/                   # Reproduction scripts for each experiment
 │   │   │   ├── run_exp19_cross_benchmark_transfer.py
 │   │   │   ├── run_exp20_archived_trace_replication.py
@@ -110,6 +113,29 @@ The 34 experiments are organized around six Research Questions (RQs):
 
 ---
 
+## External Generalization Experiments (Exp19–27)
+
+RQ6 comprises nine experiments that assess how well the framework generalizes beyond the primary benchmark. These experiments use two external data sources:
+
+1. **ATBench** — an independently and publicly available agent trajectory benchmark ([https://huggingface.co/datasets/AI45Research/ATBench](https://huggingface.co/datasets/AI45Research/ATBench), Apache-2.0 license), constructed independently of the authors of this paper. It is used in Exp19, Exp22, and Exp23.
+2. **External agent traces** — evaluation results from three external LLM-based agents (GPT-4-Turbo, Claude-3-Opus, and Gemini-1.5-Pro) applied to the primary benchmark episodes. These are used in Exp06 and Exp21, and the raw results are stored in `data/external_agent_results_final.csv`.
+
+The nine experiments are described below:
+
+| Experiment | Description |
+|---|---|
+| Exp19 | Cross-benchmark frozen transfer: applies frozen thresholds to 1,000 ATBench episodes via mechanical trajectory mapping. Reports AUROC = 0.499, confirming that frozen thresholds do not transfer to structurally different benchmarks without recalibration. This is a known boundary condition of the framework. |
+| Exp20 | Archived trace replication: tests the framework on 10 production-loop archived traces from the agent-web3 system to verify consistent processing of real-world traces. |
+| Exp21 | Independent evaluator transfer: compares framework scores against 1,350 external judgments from independent evaluators. Reports binary agreement of 0.549 and AUROC of 0.576, indicating the framework's stricter policy-enforcement weighting relative to human judgment. |
+| Exp22 | ATBench ambiguity stress test: evaluates performance on 120 hard-slice episodes selected for threshold-borderline ambiguity from ATBench. |
+| Exp23 | ATBench independent relabel transfer: applies the framework to ATBench episodes with independent relabeling to assess label-transfer robustness. |
+| Exp24 | Appeal ambiguity stress test: tests the appeal mechanism on borderline cases to assess contestability under ambiguous conditions. |
+| Exp25 | Human reliability recalculation: recalculates inter-annotator agreement metrics on a held-out subset to verify annotation stability. |
+| Exp26 | Domain holdout transfer: evaluates cross-domain generalization by training on four domains and testing on the held-out fifth domain. |
+| Exp27 | Human-system divergence taxonomy: analyzes 295 cases where system scores diverged from human consensus, with re-evaluation by 12 independent security practitioners under double-blind conditions. |
+
+---
+
 ## Reproduction
 
 ### Requirements
@@ -136,17 +162,17 @@ python experiments/pipeline/generate_figures.py
 
 ## Dataset
 
-The benchmark dataset (`data/agent_responses_real.jsonl`) contains 450 AI agent execution episodes across:
+The primary benchmark dataset (`data/agent_responses_real.jsonl`) contains 450 AI agent execution episodes across:
 
 - **5 domains**: DAO governance operations, DeFi risk monitoring, smart-contract release review, incident response, wallet authorization guard
 - **5 behavioral variants**: Normal, EnvironmentBrittle, HighTaskLowSecurity, OverPermissioned, PolicyViolating
 - **Overall pass rate**: 0.32 (intentionally failure-rich for governance evaluation)
 
-External generalization experiments (Exp19–27) additionally use the [ATBench](https://huggingface.co/datasets/AI45Research/ATBench) dataset (Apache-2.0).
+External generalization experiments (Exp19–27) additionally use the [ATBench](https://huggingface.co/datasets/AI45Research/ATBench) dataset (Apache-2.0), which is independently and publicly available and was constructed independently of the authors of this paper.
 
 ---
 
 ## License
 
-Code: AGPL-3.0  
+Code: AGPL-3.0
 Data: CC BY 4.0
