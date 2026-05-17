@@ -1,0 +1,51 @@
+{
+  "experiment": "13_appeal_correction_effectiveness",
+  "total_appeals": 200,
+  "accepted_rate": 0.25,
+  "partial_rate": 0.25,
+  "rejected_rate": 0.5,
+  "mean_correction_accepted": 47.9,
+  "mean_correction_accepted_ci": {
+    "lower": 45.3995,
+    "upper": 50.54
+  },
+  "mean_correction_partial": 17.5,
+  "mean_correction_partial_ci": {
+    "lower": 15.34,
+    "upper": 19.68
+  },
+  "mean_correction_rejected": -5.0,
+  "mean_correction_rejected_ci": {
+    "lower": -5.9,
+    "upper": -4.0
+  },
+  "mean_resolution_latency_s": 204.0,
+  "resolution_latency_ci_s": {
+    "lower": 184.7894,
+    "upper": 224.0714
+  },
+  "malicious_appeal_penalty": -10.0,
+  "appeal_outcome_breakdown": {
+    "borderline_error": {
+      "accepted": 0,
+      "partial": 50,
+      "rejected": 0
+    },
+    "insufficient_evidence": {
+      "accepted": 0,
+      "partial": 0,
+      "rejected": 50
+    },
+    "malicious_appeal": {
+      "accepted": 0,
+      "partial": 0,
+      "rejected": 50
+    },
+    "true_false_penalty": {
+      "accepted": 50,
+      "partial": 0,
+      "rejected": 0
+    }
+  },
+  "conclusion": "PASS"
+}

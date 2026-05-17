@@ -1,0 +1,12 @@
+{
+  "experiment": "02_large_scale_benchmark",
+  "total_episodes": 450,
+  "n_domains": 5,
+  "n_variants": 5,
+  "n_dimensions": 6,
+  "overall_pass_rate": 0.32,
+  "overall_fail_rate": 0.68,
+  "mean_score": 66.95,
+  "std_score": 10.69,
+  "conclusion": "PASS"
+}

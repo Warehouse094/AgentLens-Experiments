@@ -1,0 +1,324 @@
+{
+  "experiment": "08_strong_baseline_comparison",
+  "n_baselines": 10,
+  "primary_metric": "AUC_for_failure_prediction",
+  "the framework_auc": 0.8676,
+  "best_baseline_auc": 0.8621,
+  "auc_advantage_over_best": 0.0055,
+  "baselines_beaten_on_auc": "10/10",
+  "the framework_correlation": 0.6977,
+  "comparisons": {
+    "latest_score_only": {
+      "mean_diff": -6.29,
+      "t_stat": -7.23,
+      "p_value": "2.10e-12",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.6721,
+      "auc_advantage": 0.1955,
+      "auc_advantage_ci": {
+        "lower": 0.142,
+        "upper": 0.2476
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.2428,
+      "the framework_wins_discrimination": true
+    },
+    "mean_historical": {
+      "mean_diff": 0.18,
+      "t_stat": 0.57,
+      "p_value": "5.68e-01",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.8621,
+      "auc_advantage": 0.0055,
+      "auc_advantage_ci": {
+        "lower": -0.0359,
+        "upper": 0.0501
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.6887,
+      "the framework_wins_discrimination": true
+    },
+    "ema_score": {
+      "mean_diff": -0.02,
+      "t_stat": -0.07,
+      "p_value": "9.46e-01",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.8568,
+      "auc_advantage": 0.0108,
+      "auc_advantage_ci": {
+        "lower": -0.0339,
+        "upper": 0.0544
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.6849,
+      "the framework_wins_discrimination": true
+    },
+    "beta_reputation": {
+      "mean_diff": 44.0,
+      "t_stat": 58.95,
+      "p_value": "1.74e-213",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.5632,
+      "auc_advantage": 0.3044,
+      "auc_advantage_ci": {
+        "lower": 0.2382,
+        "upper": 0.3713
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.1525,
+      "the framework_wins_discrimination": true
+    },
+    "elo_glicko": {
+      "mean_diff": 50.07,
+      "t_stat": 53.39,
+      "p_value": "1.37e-196",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.3882,
+      "auc_advantage": 0.4794,
+      "auc_advantage_ci": {
+        "lower": 0.4055,
+        "upper": 0.5521
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": -0.1794,
+      "the framework_wins_discrimination": true
+    },
+    "human_only_review": {
+      "mean_diff": -14.37,
+      "t_stat": -24.65,
+      "p_value": "1.80e-85",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.7137,
+      "auc_advantage": 0.1539,
+      "auc_advantage_ci": {
+        "lower": 0.0896,
+        "upper": 0.2152
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.2693,
+      "the framework_wins_discrimination": true
+    },
+    "llm_as_judge_only": {
+      "mean_diff": -8.79,
+      "t_stat": -19.71,
+      "p_value": "8.91e-63",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.7883,
+      "auc_advantage": 0.0793,
+      "auc_advantage_ci": {
+        "lower": 0.0338,
+        "upper": 0.1203
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.4005,
+      "the framework_wins_discrimination": true
+    },
+    "onchain_reputation_only": {
+      "mean_diff": -11.5,
+      "t_stat": -24.67,
+      "p_value": "1.47e-85",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.7583,
+      "auc_advantage": 0.1093,
+      "auc_advantage_ci": {
+        "lower": 0.0581,
+        "upper": 0.1626
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.349,
+      "the framework_wins_discrimination": true
+    },
+    "no_appeal": {
+      "mean_diff": 13.49,
+      "t_stat": 14.31,
+      "p_value": "1.56e-38",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.5211,
+      "auc_advantage": 0.3465,
+      "auc_advantage_ci": {
+        "lower": 0.2716,
+        "upper": 0.4197
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.0259,
+      "the framework_wins_discrimination": true
+    },
+    "no_verification": {
+      "mean_diff": -9.5,
+      "t_stat": -19.83,
+      "p_value": "2.57e-63",
+      "auc_the framework": 0.8676,
+      "auc_baseline": 0.7931,
+      "auc_advantage": 0.0745,
+      "auc_advantage_ci": {
+        "lower": 0.0259,
+        "upper": 0.1218
+      },
+      "corr_the framework": 0.6977,
+      "corr_baseline": 0.408,
+      "the framework_wins_discrimination": true
+    }
+  },
+  "auc_all_methods": {
+    "the framework_full": 0.8676,
+    "latest_score_only": 0.6721,
+    "mean_historical": 0.8621,
+    "ema_score": 0.8568,
+    "beta_reputation": 0.5632,
+    "elo_glicko": 0.3882,
+    "human_only_review": 0.7137,
+    "llm_as_judge_only": 0.7883,
+    "onchain_reputation_only": 0.7583,
+    "no_appeal": 0.5211,
+    "no_verification": 0.7931
+  },
+  "correlation_all_methods": {
+    "the framework_full": 0.6977,
+    "latest_score_only": 0.2428,
+    "mean_historical": 0.6887,
+    "ema_score": 0.6849,
+    "beta_reputation": 0.1525,
+    "elo_glicko": -0.1794,
+    "human_only_review": 0.2693,
+    "llm_as_judge_only": 0.4005,
+    "onchain_reputation_only": 0.349,
+    "no_appeal": 0.0259,
+    "no_verification": 0.408
+  },
+  "calibration_sensitivity": {
+    "weight_configs": {
+      "default": {
+        "raw_weight": 0.35,
+        "human_weight": 0.35,
+        "external_weight": 0.15,
+        "temporal_weight": 0.15,
+        "auc": 0.8676,
+        "mean_score": 66.95
+      },
+      "no_human": {
+        "raw_weight": 0.5,
+        "human_weight": 0.0,
+        "external_weight": 0.25,
+        "temporal_weight": 0.25,
+        "auc": 0.8519,
+        "mean_score": 58.37
+      },
+      "no_external": {
+        "raw_weight": 0.45,
+        "human_weight": 0.35,
+        "external_weight": 0.0,
+        "temporal_weight": 0.2,
+        "auc": 0.8923,
+        "mean_score": 68.05
+      },
+      "no_temporal": {
+        "raw_weight": 0.45,
+        "human_weight": 0.35,
+        "external_weight": 0.2,
+        "temporal_weight": 0.0,
+        "auc": 0.8292,
+        "mean_score": 70.77
+      },
+      "raw_only": {
+        "raw_weight": 1.0,
+        "human_weight": 0.0,
+        "external_weight": 0.0,
+        "temporal_weight": 0.0,
+        "auc": 0.8424,
+        "mean_score": 70.67
+      },
+      "human_heavy": {
+        "raw_weight": 0.2,
+        "human_weight": 0.5,
+        "external_weight": 0.15,
+        "temporal_weight": 0.15,
+        "auc": 0.8844,
+        "mean_score": 68.52
+      },
+      "temporal_heavy": {
+        "raw_weight": 0.2,
+        "human_weight": 0.25,
+        "external_weight": 0.15,
+        "temporal_weight": 0.4,
+        "auc": 0.8936,
+        "mean_score": 58.05
+      }
+    },
+    "auc_ranking": [
+      {
+        "config": "temporal_heavy",
+        "auc": 0.8936
+      },
+      {
+        "config": "no_external",
+        "auc": 0.8923
+      },
+      {
+        "config": "human_heavy",
+        "auc": 0.8844
+      },
+      {
+        "config": "default",
+        "auc": 0.8676
+      },
+      {
+        "config": "no_human",
+        "auc": 0.8519
+      },
+      {
+        "config": "raw_only",
+        "auc": 0.8424
+      },
+      {
+        "config": "no_temporal",
+        "auc": 0.8292
+      }
+    ],
+    "default_rank": 4,
+    "default_auc": 0.8676,
+    "best_auc": 0.8936
+  },
+  "threshold_sweep": {
+    "50": {
+      "precision": 1.0,
+      "recall": 0.0065,
+      "f1_score": 0.013,
+      "flagged_rate": 0.0044,
+      "normal_flagged_rate": 0.0,
+      "policy_violating_flagged_rate": 0.0
+    },
+    "55": {
+      "precision": 1.0,
+      "recall": 0.0654,
+      "f1_score": 0.1227,
+      "flagged_rate": 0.0444,
+      "normal_flagged_rate": 0.0,
+      "policy_violating_flagged_rate": 0.1444
+    },
+    "60": {
+      "precision": 1.0,
+      "recall": 0.4869,
+      "f1_score": 0.6549,
+      "flagged_rate": 0.3311,
+      "normal_flagged_rate": 0.0,
+      "policy_violating_flagged_rate": 0.4111
+    },
+    "65": {
+      "precision": 0.9927,
+      "recall": 0.8922,
+      "f1_score": 0.9398,
+      "flagged_rate": 0.6111,
+      "normal_flagged_rate": 0.0,
+      "policy_violating_flagged_rate": 0.5444
+    },
+    "70": {
+      "precision": 0.9712,
+      "recall": 0.9902,
+      "f1_score": 0.9806,
+      "flagged_rate": 0.6933,
+      "normal_flagged_rate": 0.0111,
+      "policy_violating_flagged_rate": 0.6333
+    }
+  },
+  "conclusion": "PASS"
+}

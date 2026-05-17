@@ -1,0 +1,110 @@
+{
+  "experiment": "20_cross_source_archived_trace_replication",
+  "source": "agent-web3 archived production-loop traces",
+  "n_episodes": 10,
+  "frozen_threshold": 60.0,
+  "mapping_coverage": {
+    "mapped_episodes": 10,
+    "excluded_episodes": 0,
+    "coverage_csv": "[REDACTED_PATH]"
+  },
+  "target_structure": {
+    "n_unique_outcomes": 1,
+    "is_label_degenerate": true
+  },
+  "verification_state_counts": {
+    "degraded": 10
+  },
+  "methods": {
+    "the framework_full": {
+      "auroc": 0.5,
+      "auroc_ci": {
+        "lower": 0.5,
+        "upper": 0.5
+      },
+      "threshold_metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "accuracy": 1.0,
+        "flagged_rate": 1.0
+      },
+      "brier_score": 0.2373,
+      "expected_calibration_error": 0.4871
+    },
+    "no_verification": {
+      "auroc": 0.5,
+      "auroc_ci": {
+        "lower": 0.5,
+        "upper": 0.5
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.0,
+        "flagged_rate": 0.0
+      },
+      "brier_score": 0.4859,
+      "expected_calibration_error": 0.6971
+    },
+    "llm_as_judge_only": {
+      "auroc": 0.5,
+      "auroc_ci": {
+        "lower": 0.5,
+        "upper": 0.5
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.0,
+        "flagged_rate": 0.0
+      },
+      "brier_score": 0.3744,
+      "expected_calibration_error": 0.6119
+    },
+    "stacked_logistic_baseline": {
+      "auroc": 0.5,
+      "auroc_ci": {
+        "lower": 0.5,
+        "upper": 0.5
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.0,
+        "flagged_rate": 0.0
+      },
+      "brier_score": 0.9801,
+      "expected_calibration_error": 0.99
+    },
+    "attestation_nonzero_rule": {
+      "auroc": 0.5,
+      "auroc_ci": {
+        "lower": 0.5,
+        "upper": 0.5
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.0,
+        "flagged_rate": 0.0
+      },
+      "brier_score": 0.64,
+      "expected_calibration_error": 0.8
+    }
+  },
+  "cross_run_stability": {
+    "n_runs": 10,
+    "attestation_nonzero_rate": 1.0,
+    "verified_like_rate": 0.0,
+    "state_counts": {
+      "degraded": 10
+    }
+  },
+  "claim_boundary": "Archived production-like trace replication only; does not establish live SGX availability or open-world authenticity.",
+  "conclusion": "MARGINAL"
+}

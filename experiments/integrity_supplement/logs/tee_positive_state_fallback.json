@@ -1,0 +1,12 @@
+{
+  "status": "fixture",
+  "source": "synthetic_listener_state",
+  "fallbackReason": "docker_missing",
+  "eventKey": "0xabc123:0",
+  "reportHash": "b08f2a37d016499643a866d3cc65219165fd77cad47b651d036c1e632066bd10",
+  "evidenceRoot": "f0361831145ccecacdd12fd558a393fcaf2450f7b4b176d80bb3ef3a65d9d037",
+  "attestationHash": "5ca726a8db5a12ba65c7074af0e877e81f0d7e10e9d5f8d7bc549e07ad063e84",
+  "reportVerified": true,
+  "evidenceVerified": true,
+  "attestationVerified": true
+}

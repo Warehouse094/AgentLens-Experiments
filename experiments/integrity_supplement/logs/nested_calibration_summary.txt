@@ -1,0 +1,26 @@
+{
+  "experiment": "19_nested_temporal_calibration",
+  "n_episodes": 450,
+  "grouping": "GroupKFold by domain; tune config and threshold on train folds only",
+  "overall_auc": 0.8937,
+  "overall_average_precision": 0.9137,
+  "overall_brier_score": 0.2,
+  "overall_ece": 0.2918,
+  "best_config_counts": {
+    "temporal_heavy": 5
+  },
+  "selected_threshold_counts": {
+    "70.0": 5
+  },
+  "mean_selected_threshold": 70.0,
+  "threshold_std": 0.0,
+  "mean_fold_auc_by_config": {
+    "default": 0.86,
+    "human_heavy": 0.8813,
+    "no_external": 0.893,
+    "no_human": 0.8484,
+    "no_temporal": 0.8196,
+    "raw_only": 0.8393,
+    "temporal_heavy": 0.8925
+  }
+}

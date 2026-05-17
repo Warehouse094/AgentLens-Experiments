@@ -1,0 +1,76 @@
+{
+  "experiment": "24_http_attestation_guard",
+  "cases": [
+    {
+      "case": "matching_measurement_and_binding",
+      "expected_status": "accepted",
+      "actual_status": "accepted",
+      "returncode": 0,
+      "error_matches": true,
+      "result": {
+        "status": "accepted",
+        "attestationHash": "fd0ef94a116392341f4d0d7c12d0f89ede7e2e291aa7c99f5e5deb3a6a19e1fe",
+        "bundle": {
+          "schemaVersion": "audit-attestation.v1",
+          "eventKey": "0xabc123:0",
+          "tokenId": "1",
+          "manifestHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "evidenceRoot": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "verifier": {
+            "type": "sgx-dcap",
+            "measurement": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+            "quoteFormat": "sgx-dcap-v3",
+            "sessionPublicKey": "205bb9156e4a38698681c34b04123158e960b6a6056f7ff40b728637b6630fe6",
+            "quote": "03000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000205bb9156e4a38698681c34b04123158e960b6a6056f7ff40b728637b6630fe6000000000000000000000000000000000000000000000000000000000000000000000000"
+          }
+        }
+      }
+    },
+    {
+      "case": "wrong_measurement",
+      "expected_status": "rejected",
+      "actual_status": "rejected",
+      "returncode": 1,
+      "error_matches": true,
+      "result": {
+        "status": "rejected",
+        "error": "measurement does not match expected value"
+      }
+    },
+    {
+      "case": "wrong_report_data",
+      "expected_status": "rejected",
+      "actual_status": "rejected",
+      "returncode": 1,
+      "error_matches": true,
+      "result": {
+        "status": "rejected",
+        "error": "report_data does not match expected sha256(eventKey + manifestHash + evidenceRoot)"
+      }
+    },
+    {
+      "case": "incomplete_payload",
+      "expected_status": "rejected",
+      "actual_status": "rejected",
+      "returncode": 1,
+      "error_matches": true,
+      "result": {
+        "status": "rejected",
+        "error": "sessionPublicKey is required in attestation response"
+      }
+    },
+    {
+      "case": "malformed_quote",
+      "expected_status": "rejected",
+      "actual_status": "rejected",
+      "returncode": 1,
+      "error_matches": true,
+      "result": {
+        "status": "rejected",
+        "error": "quote is not valid hex"
+      }
+    }
+  ],
+  "detected_expected_count": 5,
+  "total_cases": 5
+}

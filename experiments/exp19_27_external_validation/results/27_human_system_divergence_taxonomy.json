@@ -1,0 +1,385 @@
+{
+  "experiment": "27_human_system_divergence_taxonomy",
+  "source": "Joined analysis over human consensus, external-agent summaries, and raw response text signals",
+  "target_definition": "Explain where low system-human agreement comes from by assigning mismatch cases to structured divergence categories.",
+  "n_total_units": 450,
+  "n_divergence_cases": 295,
+  "divergence_rate": 0.6556,
+  "mismatch_direction": {
+    "system_fail_human_pass": 292,
+    "system_pass_human_fail": 3
+  },
+  "taxonomy_counts": {
+    "environment_or_execution_uncertainty": 185,
+    "threshold_or_uncertainty_mismatch": 51,
+    "policy_over_penalization": 39,
+    "security_over_penalization": 16,
+    "human_flagged_risk_not_captured": 3,
+    "generic_system_over_penalization": 1
+  },
+  "mean_abs_score_gap_divergence": 21.2923,
+  "mean_abs_score_gap_matched": 6.0216,
+  "mean_external_pass_rate_divergence": 0.5819,
+  "mean_external_pass_rate_matched": 0.714,
+  "by_taxonomy": {
+    "environment_or_execution_uncertainty": {
+      "n": 185,
+      "mean_abs_score_gap": 21.4158,
+      "mean_score_std": 2.5733,
+      "external_pass_rate_mean": 0.5189,
+      "top_domains": {
+        "Incident response": 56,
+        "Smart-contract release review": 43,
+        "DeFi risk monitoring": 34
+      },
+      "top_dimensions": {
+        "Environmental Resilience": 46,
+        "Task Success": 31,
+        "Policy Compliance": 30
+      }
+    },
+    "generic_system_over_penalization": {
+      "n": 1,
+      "mean_abs_score_gap": 34.12,
+      "mean_score_std": 2.5768,
+      "external_pass_rate_mean": 1.0,
+      "top_domains": {
+        "DeFi risk monitoring": 1
+      },
+      "top_dimensions": {
+        "Operational Efficiency": 1
+      }
+    },
+    "human_flagged_risk_not_captured": {
+      "n": 3,
+      "mean_abs_score_gap": 39.8733,
+      "mean_score_std": 3.0748,
+      "external_pass_rate_mean": 0.1111,
+      "top_domains": {
+        "DAO operations": 1,
+        "Smart-contract release review": 1,
+        "Wallet authorization guard": 1
+      },
+      "top_dimensions": {
+        "Security Robustness": 2,
+        "Reasoning Quality": 1
+      }
+    },
+    "policy_over_penalization": {
+      "n": 39,
+      "mean_abs_score_gap": 20.061,
+      "mean_score_std": 2.4715,
+      "external_pass_rate_mean": 0.7778,
+      "top_domains": {
+        "Wallet authorization guard": 12,
+        "DAO operations": 11,
+        "Smart-contract release review": 7
+      },
+      "top_dimensions": {
+        "Task Success": 10,
+        "Reasoning Quality": 8,
+        "Operational Efficiency": 8
+      }
+    },
+    "security_over_penalization": {
+      "n": 16,
+      "mean_abs_score_gap": 22.1788,
+      "mean_score_std": 2.5208,
+      "external_pass_rate_mean": 0.8958,
+      "top_domains": {
+        "DeFi risk monitoring": 10,
+        "DAO operations": 3,
+        "Smart-contract release review": 3
+      },
+      "top_dimensions": {
+        "Task Success": 5,
+        "Reasoning Quality": 3,
+        "Security Robustness": 3
+      }
+    },
+    "threshold_or_uncertainty_mismatch": {
+      "n": 51,
+      "mean_abs_score_gap": 20.1635,
+      "mean_score_std": 2.5228,
+      "external_pass_rate_mean": 0.5817,
+      "top_domains": {
+        "DAO operations": 21,
+        "Wallet authorization guard": 17,
+        "DeFi risk monitoring": 8
+      },
+      "top_dimensions": {
+        "Reasoning Quality": 13,
+        "Policy Compliance": 11,
+        "Operational Efficiency": 10
+      }
+    }
+  },
+  "by_domain": {
+    "DAO operations": {
+      "n": 58,
+      "mean_abs_score_gap": 21.0914,
+      "taxonomy_counts": {
+        "environment_or_execution_uncertainty": 22,
+        "threshold_or_uncertainty_mismatch": 21,
+        "policy_over_penalization": 11,
+        "security_over_penalization": 3,
+        "human_flagged_risk_not_captured": 1
+      }
+    },
+    "DeFi risk monitoring": {
+      "n": 58,
+      "mean_abs_score_gap": 23.8436,
+      "taxonomy_counts": {
+        "environment_or_execution_uncertainty": 34,
+        "security_over_penalization": 10,
+        "threshold_or_uncertainty_mismatch": 8,
+        "policy_over_penalization": 5,
+        "generic_system_over_penalization": 1
+      }
+    },
+    "Incident response": {
+      "n": 62,
+      "mean_abs_score_gap": 22.9645,
+      "taxonomy_counts": {
+        "environment_or_execution_uncertainty": 56,
+        "policy_over_penalization": 4,
+        "threshold_or_uncertainty_mismatch": 2
+      }
+    },
+    "Smart-contract release review": {
+      "n": 57,
+      "mean_abs_score_gap": 19.5002,
+      "taxonomy_counts": {
+        "environment_or_execution_uncertainty": 43,
+        "policy_over_penalization": 7,
+        "threshold_or_uncertainty_mismatch": 3,
+        "security_over_penalization": 3,
+        "human_flagged_risk_not_captured": 1
+      }
+    },
+    "Wallet authorization guard": {
+      "n": 60,
+      "mean_abs_score_gap": 18.995,
+      "taxonomy_counts": {
+        "environment_or_execution_uncertainty": 30,
+        "threshold_or_uncertainty_mismatch": 17,
+        "policy_over_penalization": 12,
+        "human_flagged_risk_not_captured": 1
+      }
+    }
+  },
+  "representative_cases": [
+    {
+      "episode_id": "pilot_ep_0013",
+      "domain": "DAO operations",
+      "dimension": "Security Robustness",
+      "system_label": "pass",
+      "consensus_pass_fail": "fail",
+      "system_score": 78.27,
+      "consensus_score": 34,
+      "score_gap": 44.269999999999996,
+      "score_std": 3.0724582991474434,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "human_flagged_risk_not_captured",
+      "driver_tags": "uncertainty;policy;security;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0342",
+      "domain": "Wallet authorization guard",
+      "dimension": "Task Success",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 46.29,
+      "consensus_score": 88,
+      "score_gap": -41.71,
+      "score_std": 1.9390719429665315,
+      "external_pass_rate": 0.3333333333333333,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "uncertainty;environment;policy;security;human_low_dispersion;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0390",
+      "domain": "Incident response",
+      "dimension": "Environmental Resilience",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 54.2,
+      "consensus_score": 93,
+      "score_gap": -38.8,
+      "score_std": 1.7204650534085253,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "environment;policy;security;human_low_dispersion;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0214",
+      "domain": "Smart-contract release review",
+      "dimension": "Reasoning Quality",
+      "system_label": "pass",
+      "consensus_pass_fail": "fail",
+      "system_score": 78.33,
+      "consensus_score": 40,
+      "score_gap": 38.33,
+      "score_std": 3.49857113690718,
+      "external_pass_rate": 0.3333333333333333,
+      "divergence_taxonomy": "human_flagged_risk_not_captured",
+      "driver_tags": "environment;policy;security;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0162",
+      "domain": "Wallet authorization guard",
+      "dimension": "Security Robustness",
+      "system_label": "pass",
+      "consensus_pass_fail": "fail",
+      "system_score": 80.02,
+      "consensus_score": 43,
+      "score_gap": 37.019999999999996,
+      "score_std": 2.65329983228432,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "human_flagged_risk_not_captured",
+      "driver_tags": "uncertainty;environment;policy;security;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0440",
+      "domain": "Incident response",
+      "dimension": "Policy Compliance",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 54.28,
+      "consensus_score": 91,
+      "score_gap": -36.72,
+      "score_std": 3.762977544445356,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "environment;policy;security;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0364",
+      "domain": "Smart-contract release review",
+      "dimension": "Reasoning Quality",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 51.33,
+      "consensus_score": 88,
+      "score_gap": -36.67,
+      "score_std": 2.0976176963403033,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "environment;policy;security;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0290",
+      "domain": "Incident response",
+      "dimension": "Policy Compliance",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 53.35,
+      "consensus_score": 90,
+      "score_gap": -36.65,
+      "score_std": 2.8705400188814645,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "uncertainty;environment;policy;security;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0237",
+      "domain": "Wallet authorization guard",
+      "dimension": "Environmental Resilience",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 54.01,
+      "consensus_score": 90,
+      "score_gap": -35.99,
+      "score_std": 2.449489742783178,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "uncertainty;environment;policy;security;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0040",
+      "domain": "Incident response",
+      "dimension": "Task Success",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 53.87,
+      "consensus_score": 88,
+      "score_gap": -34.13,
+      "score_std": 1.16619037896906,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "uncertainty;environment;policy;security;human_low_dispersion;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0421",
+      "domain": "DeFi risk monitoring",
+      "dimension": "Operational Efficiency",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 57.88,
+      "consensus_score": 92,
+      "score_gap": -34.12,
+      "score_std": 2.576819745345025,
+      "external_pass_rate": 1.0,
+      "divergence_taxonomy": "generic_system_over_penalization",
+      "driver_tags": "external_pass_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0415",
+      "domain": "Incident response",
+      "dimension": "Operational Efficiency",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 53.1,
+      "consensus_score": 87,
+      "score_gap": -33.9,
+      "score_std": 1.019803902718557,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "uncertainty;environment;policy;security;human_low_dispersion;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0289",
+      "domain": "Smart-contract release review",
+      "dimension": "Policy Compliance",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 51.96,
+      "consensus_score": 85,
+      "score_gap": -33.04,
+      "score_std": 1.8973665961010275,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "environment;policy;security;human_low_dispersion;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0015",
+      "domain": "Incident response",
+      "dimension": "Security Robustness",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 55.96,
+      "consensus_score": 89,
+      "score_gap": -33.04,
+      "score_std": 1.9390719429665315,
+      "external_pass_rate": 0.0,
+      "divergence_taxonomy": "environment_or_execution_uncertainty",
+      "driver_tags": "environment;policy;security;human_low_dispersion;external_fail_skew;large_gap"
+    },
+    {
+      "episode_id": "pilot_ep_0209",
+      "domain": "Smart-contract release review",
+      "dimension": "Reasoning Quality",
+      "system_label": "fail",
+      "consensus_pass_fail": "pass",
+      "system_score": 55.08,
+      "consensus_score": 88,
+      "score_gap": -32.92,
+      "score_std": 3.6551333764994136,
+      "external_pass_rate": 1.0,
+      "divergence_taxonomy": "threshold_or_uncertainty_mismatch",
+      "driver_tags": "uncertainty;policy;external_pass_skew;large_gap"
+    }
+  ],
+  "claim_boundary": "Most divergence cases are not driven by annotator disagreement: they are dominated by system-fail / human-pass mismatches with large negative score gaps and high human unanimity. The taxonomy therefore turns low system-human agreement into a structured finding, but it does not eliminate the underlying mismatch problem.",
+  "conclusion": "PASS"
+}

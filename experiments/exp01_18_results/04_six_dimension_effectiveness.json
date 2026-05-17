@@ -1,0 +1,45 @@
+{
+  "experiment": "04_six_dimension_effectiveness",
+  "F_statistic": null,
+  "p_value": null,
+  "dimension_discrimination": {
+    "Security Robustness": {
+      "comparison_variant": "PolicyViolating",
+      "t": 11.33,
+      "p": "9.35e-23",
+      "cohens_d": 1.69
+    },
+    "Task Success": {
+      "comparison_variant": "EnvironmentBrittle",
+      "t": 25.38,
+      "p": "4.80e-61",
+      "cohens_d": 3.78
+    },
+    "Reasoning Quality": {
+      "comparison_variant": "PolicyViolating",
+      "t": 16.72,
+      "p": "2.43e-38",
+      "cohens_d": 2.49
+    },
+    "Environmental Resilience": {
+      "comparison_variant": "EnvironmentBrittle",
+      "t": 30.84,
+      "p": "2.51e-73",
+      "cohens_d": 4.6
+    },
+    "Operational Efficiency": {
+      "comparison_variant": "OverPermissioned",
+      "t": 27.29,
+      "p": "1.62e-65",
+      "cohens_d": 4.07
+    },
+    "Policy Compliance": {
+      "comparison_variant": "PolicyViolating",
+      "t": 11.9,
+      "p": "2.12e-24",
+      "cohens_d": 1.77
+    }
+  },
+  "all_dimensions_significant": true,
+  "conclusion": "PASS"
+}

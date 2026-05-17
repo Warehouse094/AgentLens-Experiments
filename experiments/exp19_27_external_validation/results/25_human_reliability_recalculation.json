@@ -1,0 +1,109 @@
+{
+  "experiment": "25_human_reliability_recalculation",
+  "source": "Recalculation from raw five-annotator CSV returns with bootstrap confidence intervals",
+  "n_annotations": 2250,
+  "n_episodes": 450,
+  "n_annotators": 5,
+  "pairwise_binary_agreement": 0.9787,
+  "pairwise_binary_agreement_ci": {
+    "lower": 0.9742,
+    "upper": 0.9829
+  },
+  "cohens_kappa": 0.7465,
+  "cohens_kappa_ci": {
+    "lower": 0.6941,
+    "upper": 0.7912
+  },
+  "score_correlation": 0.931,
+  "score_correlation_ci": {
+    "lower": 0.9211,
+    "upper": 0.9401
+  },
+  "mean_pairwise_score_delta": 3.4036,
+  "mean_score_dispersion": 2.5487,
+  "mean_score_dispersion_ci": {
+    "lower": 2.4731,
+    "upper": 2.6306
+  },
+  "full_unanimity_rate": 0.9556,
+  "full_unanimity_rate_ci": {
+    "lower": 0.9356,
+    "upper": 0.9733
+  },
+  "system_human_agreement": 0.3444,
+  "system_human_agreement_ci": {
+    "lower": 0.3022,
+    "upper": 0.3867
+  },
+  "per_domain": {
+    "DAO operations": {
+      "n": 90,
+      "system_human_agreement": 0.3556,
+      "mean_score_dispersion": 2.5747,
+      "unanimity_rate": 0.9778
+    },
+    "DeFi risk monitoring": {
+      "n": 90,
+      "system_human_agreement": 0.3556,
+      "mean_score_dispersion": 2.5586,
+      "unanimity_rate": 0.9889
+    },
+    "Incident response": {
+      "n": 90,
+      "system_human_agreement": 0.3111,
+      "mean_score_dispersion": 2.4243,
+      "unanimity_rate": 0.9444
+    },
+    "Smart-contract release review": {
+      "n": 90,
+      "system_human_agreement": 0.3667,
+      "mean_score_dispersion": 2.626,
+      "unanimity_rate": 0.9444
+    },
+    "Wallet authorization guard": {
+      "n": 90,
+      "system_human_agreement": 0.3333,
+      "mean_score_dispersion": 2.5599,
+      "unanimity_rate": 0.9222
+    }
+  },
+  "leave_one_annotator_out": [
+    {
+      "held_out_annotator": "annotator_alpha",
+      "n_episodes": 450,
+      "system_human_agreement": 0.3378,
+      "score_correlation": 0.2306,
+      "pass_rate": 0.9689
+    },
+    {
+      "held_out_annotator": "annotator_beta",
+      "n_episodes": 450,
+      "system_human_agreement": 0.34,
+      "score_correlation": 0.2366,
+      "pass_rate": 0.9667
+    },
+    {
+      "held_out_annotator": "annotator_delta",
+      "n_episodes": 450,
+      "system_human_agreement": 0.3378,
+      "score_correlation": 0.236,
+      "pass_rate": 0.9689
+    },
+    {
+      "held_out_annotator": "annotator_epsilon",
+      "n_episodes": 450,
+      "system_human_agreement": 0.3422,
+      "score_correlation": 0.2338,
+      "pass_rate": 0.9644
+    },
+    {
+      "held_out_annotator": "annotator_gamma",
+      "n_episodes": 450,
+      "system_human_agreement": 0.3444,
+      "score_correlation": 0.2262,
+      "pass_rate": 0.9622
+    }
+  ],
+  "claim_boundary": "This recalculation fixes the zero-width kappa interval bug by bootstrapping raw pairwise label comparisons from the five-annotator returns. It improves statistical reporting quality but does not, by itself, eliminate the broader system-human divergence observed in the package.",
+  "conclusion": "PASS"
+}

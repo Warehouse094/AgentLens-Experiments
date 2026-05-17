@@ -1,0 +1,68 @@
+{
+  "experiment": "21_tee_negative_regression",
+  "positive_state_source": "synthetic_fixture",
+  "event_key": "0xabc123:0",
+  "positive_state_dir": "/tmp/the framework_revision_bundle/tee/positive_local_e2e",
+  "cases": [
+    {
+      "case": "report_hash_mismatch",
+      "expected_status": "hash_mismatch",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "hash_mismatch",
+          "eventKey": "0xabc123:0",
+          "reportFilePath": "/tmp/the framework_revision_bundle/tee/mutated_cases/report_hash_mismatch/reports/1-0xabc123-0-b08f2a37d016499643a866d3cc65219165fd77cad47b651d036c1e632066bd10.json",
+          "expectedReportHash": "b08f2a37d016499643a866d3cc65219165fd77cad47b651d036c1e632066bd10",
+          "actualReportHash": "f7e24242d54380d62f40d31e51337324c6e34e42a2871091c8cea66034d70a7e"
+        }
+      }
+    },
+    {
+      "case": "evidence_root_mismatch",
+      "expected_status": "hash_mismatch",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "hash_mismatch",
+          "eventKey": "0xabc123:0",
+          "evidenceFilePath": "/tmp/the framework_revision_bundle/tee/mutated_cases/evidence_root_mismatch/evidence/1-0xabc123-0-f0361831145ccecacdd12fd558a393fcaf2450f7b4b176d80bb3ef3a65d9d037.json",
+          "expectedEvidenceRoot": "f0361831145ccecacdd12fd558a393fcaf2450f7b4b176d80bb3ef3a65d9d037",
+          "actualEvidenceRoot": "f0361831145ccecacdd12fd558a393fcaf2450f7b4b176d80bb3ef3a65d9d037"
+        }
+      }
+    },
+    {
+      "case": "attestation_measurement_mismatch",
+      "expected_status": "verifier_mismatch",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "verifier_mismatch",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/mutated_cases/attestation_measurement_mismatch/attestations/1-0xabc123-0-8cde057b7809301f5b13aaf17ead39d89942b8dea11de223fc53a18ff77bc97b.json",
+          "field": "measurement",
+          "expected": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "actual": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+        }
+      }
+    },
+    {
+      "case": "attestation_file_conflict",
+      "expected_status": "conflict",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "conflict",
+          "eventKey": "0xabc123:0",
+          "matches": [
+            "/tmp/the framework_revision_bundle/tee/mutated_cases/attestation_file_conflict/attestations/1-0xabc123-0-5ca726a8db5a12ba65c7074af0e877e81f0d7e10e9d5f8d7bc549e07ad063e84.json",
+            "/tmp/the framework_revision_bundle/tee/mutated_cases/attestation_file_conflict/attestations/999-0xabc123-0-5ca726a8db5a12ba65c7074af0e877e81f0d7e10e9d5f8d7bc549e07ad063e84.json"
+          ]
+        }
+      }
+    }
+  ],
+  "detected_expected_count": 4,
+  "total_cases": 4
+}

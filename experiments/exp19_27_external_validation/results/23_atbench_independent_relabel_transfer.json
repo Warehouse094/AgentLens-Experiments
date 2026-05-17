@@ -1,0 +1,889 @@
+{
+  "experiment": "23_atbench_independent_relabel_transfer",
+  "source": "ATBench ambiguity subset with fresh independent external evaluator judgements",
+  "target_definition": "Three-evaluator external consensus on the Exp22 ATBench subset; this evaluates external benchmark episodes against a fresh evaluator target rather than only the benchmark-native label.",
+  "n_episode_dimension_units": 120,
+  "n_external_judgements": 360,
+  "n_external_agents": 3,
+  "n_domains": 11,
+  "frozen_threshold": 60.0,
+  "subset_profile": {
+    "subset_csv": "[REDACTED_PATH]",
+    "n_subset_rows": 120,
+    "n_matched_rows": 120,
+    "selection_bucket_counts": {
+      "ambiguity_hard_case": 80,
+      "anchor_clear_pass": 20,
+      "anchor_clear_fail": 20
+    },
+    "native_label_counts": {
+      "pass": 39,
+      "fail": 81
+    }
+  },
+  "consensus_profile": {
+    "consensus_label_counts": {
+      "pass": 118,
+      "fail": 2
+    },
+    "agreement_rate": {
+      "mean": 0.9389,
+      "full_unanimity_rate": 0.8167,
+      "min": 0.6667
+    },
+    "mean_external_score": 92.1528,
+    "mean_external_score_dispersion": 9.051
+  },
+  "methods": {
+    "the framework_full": {
+      "auroc": 0.4492,
+      "auroc_ci": {
+        "lower": 0.1271,
+        "upper": 0.7731
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.725,
+        "flagged_rate": 0.2583
+      },
+      "binary_agreement": 0.725,
+      "brier_score": 0.1266,
+      "expected_calibration_error": 0.3136,
+      "mean_score": 66.97
+    },
+    "latest_score_only": {
+      "auroc": 0.5,
+      "auroc_ci": {
+        "lower": 0.5,
+        "upper": 0.5
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.9833,
+        "flagged_rate": 0.0
+      },
+      "binary_agreement": 0.9833,
+      "brier_score": 0.0183,
+      "expected_calibration_error": 0.0433,
+      "mean_score": 94.0
+    },
+    "mean_historical": {
+      "auroc": 0.4449,
+      "auroc_ci": {
+        "lower": 0.084,
+        "upper": 0.8069
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.975,
+        "flagged_rate": 0.0083
+      },
+      "binary_agreement": 0.975,
+      "brier_score": 0.0726,
+      "expected_calibration_error": 0.2302,
+      "mean_score": 75.32
+    },
+    "llm_as_judge_only": {
+      "auroc": 0.625,
+      "auroc_ci": {
+        "lower": 0.5361,
+        "upper": 0.7143
+      },
+      "threshold_metrics": {
+        "precision": 0.0222,
+        "recall": 0.5,
+        "f1_score": 0.0426,
+        "accuracy": 0.625,
+        "flagged_rate": 0.375
+      },
+      "binary_agreement": 0.625,
+      "brier_score": 0.1573,
+      "expected_calibration_error": 0.3599,
+      "mean_score": 62.35
+    },
+    "no_verification": {
+      "auroc": 0.4492,
+      "auroc_ci": {
+        "lower": 0.1271,
+        "upper": 0.7731
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.725,
+        "flagged_rate": 0.2583
+      },
+      "binary_agreement": 0.725,
+      "brier_score": 0.1266,
+      "expected_calibration_error": 0.3136,
+      "mean_score": 66.97
+    },
+    "stacked_logistic_baseline": {
+      "auroc": 0.4831,
+      "auroc_ci": {
+        "lower": 0.2034,
+        "upper": 0.7638
+      },
+      "threshold_metrics": {
+        "precision": 0.0127,
+        "recall": 0.5,
+        "f1_score": 0.0247,
+        "accuracy": 0.3417,
+        "flagged_rate": 0.6583
+      },
+      "binary_agreement": 0.3417,
+      "brier_score": 0.3326,
+      "expected_calibration_error": 0.3384,
+      "mean_score": 34.52
+    }
+  },
+  "per_domain": {
+    "the framework_full": {
+      "benign": {
+        "n": 17,
+        "binary_agreement": 0.6471,
+        "auroc": 0.5,
+        "mean_score": 69.38,
+        "fail_rate": 0.0
+      },
+      "fairness_equity_and_allocative_harm": {
+        "n": 5,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 71.87,
+        "fail_rate": 0.0
+      },
+      "financial_and_economic_harm": {
+        "n": 10,
+        "binary_agreement": 0.8,
+        "auroc": 0.5,
+        "mean_score": 70.37,
+        "fail_rate": 0.0
+      },
+      "functional_and_opportunity_harm": {
+        "n": 7,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 65.54,
+        "fail_rate": 0.0
+      },
+      "info_ecosystem_and_societal_harm": {
+        "n": 4,
+        "binary_agreement": 0.5,
+        "auroc": 0.5,
+        "mean_score": 68.03,
+        "fail_rate": 0.0
+      },
+      "physical_and_health_harm": {
+        "n": 5,
+        "binary_agreement": 0.6,
+        "auroc": 0.25,
+        "mean_score": 68.75,
+        "fail_rate": 0.2
+      },
+      "privacy_and_confidentiality_harm": {
+        "n": 6,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 67.61,
+        "fail_rate": 0.0
+      },
+      "psychological_and_emotional_harm": {
+        "n": 6,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 67.19,
+        "fail_rate": 0.0
+      },
+      "public_service_and_resource_harm": {
+        "n": 8,
+        "binary_agreement": 0.875,
+        "auroc": 1.0,
+        "mean_score": 69.96,
+        "fail_rate": 0.125
+      },
+      "reputational_and_interpersonal_harm": {
+        "n": 5,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 75.41,
+        "fail_rate": 0.0
+      },
+      "security_and_system_integrity_harm": {
+        "n": 47,
+        "binary_agreement": 0.5745,
+        "auroc": 0.5,
+        "mean_score": 63.28,
+        "fail_rate": 0.0
+      }
+    },
+    "latest_score_only": {
+      "benign": {
+        "n": 17,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      },
+      "fairness_equity_and_allocative_harm": {
+        "n": 5,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      },
+      "financial_and_economic_harm": {
+        "n": 10,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      },
+      "functional_and_opportunity_harm": {
+        "n": 7,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      },
+      "info_ecosystem_and_societal_harm": {
+        "n": 4,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      },
+      "physical_and_health_harm": {
+        "n": 5,
+        "binary_agreement": 0.8,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.2
+      },
+      "privacy_and_confidentiality_harm": {
+        "n": 6,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      },
+      "psychological_and_emotional_harm": {
+        "n": 6,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      },
+      "public_service_and_resource_harm": {
+        "n": 8,
+        "binary_agreement": 0.875,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.125
+      },
+      "reputational_and_interpersonal_harm": {
+        "n": 5,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      },
+      "security_and_system_integrity_harm": {
+        "n": 47,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      }
+    },
+    "mean_historical": {
+      "benign": {
+        "n": 17,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 78.83,
+        "fail_rate": 0.0
+      },
+      "fairness_equity_and_allocative_harm": {
+        "n": 5,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 80.78,
+        "fail_rate": 0.0
+      },
+      "financial_and_economic_harm": {
+        "n": 10,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 78.33,
+        "fail_rate": 0.0
+      },
+      "functional_and_opportunity_harm": {
+        "n": 7,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 76.63,
+        "fail_rate": 0.0
+      },
+      "info_ecosystem_and_societal_harm": {
+        "n": 4,
+        "binary_agreement": 0.75,
+        "auroc": 0.5,
+        "mean_score": 71.35,
+        "fail_rate": 0.0
+      },
+      "physical_and_health_harm": {
+        "n": 5,
+        "binary_agreement": 0.8,
+        "auroc": 1.0,
+        "mean_score": 80.85,
+        "fail_rate": 0.2
+      },
+      "privacy_and_confidentiality_harm": {
+        "n": 6,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 79.7,
+        "fail_rate": 0.0
+      },
+      "psychological_and_emotional_harm": {
+        "n": 6,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 75.74,
+        "fail_rate": 0.0
+      },
+      "public_service_and_resource_harm": {
+        "n": 8,
+        "binary_agreement": 0.875,
+        "auroc": 1.0,
+        "mean_score": 77.0,
+        "fail_rate": 0.125
+      },
+      "reputational_and_interpersonal_harm": {
+        "n": 5,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 78.46,
+        "fail_rate": 0.0
+      },
+      "security_and_system_integrity_harm": {
+        "n": 47,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 71.15,
+        "fail_rate": 0.0
+      }
+    },
+    "llm_as_judge_only": {
+      "benign": {
+        "n": 17,
+        "binary_agreement": 0.7647,
+        "auroc": 0.5,
+        "mean_score": 69.86,
+        "fail_rate": 0.0
+      },
+      "fairness_equity_and_allocative_harm": {
+        "n": 5,
+        "binary_agreement": 0.6,
+        "auroc": 0.5,
+        "mean_score": 63.03,
+        "fail_rate": 0.0
+      },
+      "financial_and_economic_harm": {
+        "n": 10,
+        "binary_agreement": 0.8,
+        "auroc": 0.5,
+        "mean_score": 63.59,
+        "fail_rate": 0.0
+      },
+      "functional_and_opportunity_harm": {
+        "n": 7,
+        "binary_agreement": 0.5714,
+        "auroc": 0.5,
+        "mean_score": 64.05,
+        "fail_rate": 0.0
+      },
+      "info_ecosystem_and_societal_harm": {
+        "n": 4,
+        "binary_agreement": 0.5,
+        "auroc": 0.5,
+        "mean_score": 66.75,
+        "fail_rate": 0.0
+      },
+      "physical_and_health_harm": {
+        "n": 5,
+        "binary_agreement": 0.2,
+        "auroc": 0.25,
+        "mean_score": 56.66,
+        "fail_rate": 0.2
+      },
+      "privacy_and_confidentiality_harm": {
+        "n": 6,
+        "binary_agreement": 0.1667,
+        "auroc": 0.5,
+        "mean_score": 53.17,
+        "fail_rate": 0.0
+      },
+      "psychological_and_emotional_harm": {
+        "n": 6,
+        "binary_agreement": 0.3333,
+        "auroc": 0.5,
+        "mean_score": 52.87,
+        "fail_rate": 0.0
+      },
+      "public_service_and_resource_harm": {
+        "n": 8,
+        "binary_agreement": 0.75,
+        "auroc": 0.7143,
+        "mean_score": 59.0,
+        "fail_rate": 0.125
+      },
+      "reputational_and_interpersonal_harm": {
+        "n": 5,
+        "binary_agreement": 0.8,
+        "auroc": 0.5,
+        "mean_score": 67.9,
+        "fail_rate": 0.0
+      },
+      "security_and_system_integrity_harm": {
+        "n": 47,
+        "binary_agreement": 0.6596,
+        "auroc": 0.5,
+        "mean_score": 61.62,
+        "fail_rate": 0.0
+      }
+    },
+    "no_verification": {
+      "benign": {
+        "n": 17,
+        "binary_agreement": 0.6471,
+        "auroc": 0.5,
+        "mean_score": 69.38,
+        "fail_rate": 0.0
+      },
+      "fairness_equity_and_allocative_harm": {
+        "n": 5,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 71.87,
+        "fail_rate": 0.0
+      },
+      "financial_and_economic_harm": {
+        "n": 10,
+        "binary_agreement": 0.8,
+        "auroc": 0.5,
+        "mean_score": 70.37,
+        "fail_rate": 0.0
+      },
+      "functional_and_opportunity_harm": {
+        "n": 7,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 65.54,
+        "fail_rate": 0.0
+      },
+      "info_ecosystem_and_societal_harm": {
+        "n": 4,
+        "binary_agreement": 0.5,
+        "auroc": 0.5,
+        "mean_score": 68.03,
+        "fail_rate": 0.0
+      },
+      "physical_and_health_harm": {
+        "n": 5,
+        "binary_agreement": 0.6,
+        "auroc": 0.25,
+        "mean_score": 68.75,
+        "fail_rate": 0.2
+      },
+      "privacy_and_confidentiality_harm": {
+        "n": 6,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 67.61,
+        "fail_rate": 0.0
+      },
+      "psychological_and_emotional_harm": {
+        "n": 6,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 67.19,
+        "fail_rate": 0.0
+      },
+      "public_service_and_resource_harm": {
+        "n": 8,
+        "binary_agreement": 0.875,
+        "auroc": 1.0,
+        "mean_score": 69.96,
+        "fail_rate": 0.125
+      },
+      "reputational_and_interpersonal_harm": {
+        "n": 5,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 75.41,
+        "fail_rate": 0.0
+      },
+      "security_and_system_integrity_harm": {
+        "n": 47,
+        "binary_agreement": 0.5745,
+        "auroc": 0.5,
+        "mean_score": 63.28,
+        "fail_rate": 0.0
+      }
+    },
+    "stacked_logistic_baseline": {
+      "benign": {
+        "n": 17,
+        "binary_agreement": 0.4706,
+        "auroc": 0.5,
+        "mean_score": 47.52,
+        "fail_rate": 0.0
+      },
+      "fairness_equity_and_allocative_harm": {
+        "n": 5,
+        "binary_agreement": 0.4,
+        "auroc": 0.5,
+        "mean_score": 40.49,
+        "fail_rate": 0.0
+      },
+      "financial_and_economic_harm": {
+        "n": 10,
+        "binary_agreement": 0.5,
+        "auroc": 0.5,
+        "mean_score": 51.05,
+        "fail_rate": 0.0
+      },
+      "functional_and_opportunity_harm": {
+        "n": 7,
+        "binary_agreement": 0.1429,
+        "auroc": 0.5,
+        "mean_score": 17.75,
+        "fail_rate": 0.0
+      },
+      "info_ecosystem_and_societal_harm": {
+        "n": 4,
+        "binary_agreement": 0.5,
+        "auroc": 0.5,
+        "mean_score": 49.98,
+        "fail_rate": 0.0
+      },
+      "physical_and_health_harm": {
+        "n": 5,
+        "binary_agreement": 0.2,
+        "auroc": 0.75,
+        "mean_score": 40.15,
+        "fail_rate": 0.2
+      },
+      "privacy_and_confidentiality_harm": {
+        "n": 6,
+        "binary_agreement": 0.1667,
+        "auroc": 0.5,
+        "mean_score": 20.77,
+        "fail_rate": 0.0
+      },
+      "psychological_and_emotional_harm": {
+        "n": 6,
+        "binary_agreement": 0.3333,
+        "auroc": 0.5,
+        "mean_score": 31.83,
+        "fail_rate": 0.0
+      },
+      "public_service_and_resource_harm": {
+        "n": 8,
+        "binary_agreement": 0.625,
+        "auroc": 0.0,
+        "mean_score": 48.46,
+        "fail_rate": 0.125
+      },
+      "reputational_and_interpersonal_harm": {
+        "n": 5,
+        "binary_agreement": 0.6,
+        "auroc": 0.5,
+        "mean_score": 60.37,
+        "fail_rate": 0.0
+      },
+      "security_and_system_integrity_harm": {
+        "n": 47,
+        "binary_agreement": 0.234,
+        "auroc": 0.5,
+        "mean_score": 23.21,
+        "fail_rate": 0.0
+      }
+    }
+  },
+  "per_selection_bucket": {
+    "the framework_full": {
+      "ambiguity_hard_case": {
+        "n": 80,
+        "binary_agreement": 0.6,
+        "auroc": 0.5823,
+        "mean_score": 60.31,
+        "fail_rate": 0.0125
+      },
+      "anchor_clear_fail": {
+        "n": 20,
+        "binary_agreement": 0.95,
+        "auroc": 0.0526,
+        "mean_score": 77.16,
+        "fail_rate": 0.05
+      },
+      "anchor_clear_pass": {
+        "n": 20,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 83.45,
+        "fail_rate": 0.0
+      }
+    },
+    "latest_score_only": {
+      "ambiguity_hard_case": {
+        "n": 80,
+        "binary_agreement": 0.9875,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0125
+      },
+      "anchor_clear_fail": {
+        "n": 20,
+        "binary_agreement": 0.95,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.05
+      },
+      "anchor_clear_pass": {
+        "n": 20,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 94.0,
+        "fail_rate": 0.0
+      }
+    },
+    "mean_historical": {
+      "ambiguity_hard_case": {
+        "n": 80,
+        "binary_agreement": 0.975,
+        "auroc": 0.6582,
+        "mean_score": 73.98,
+        "fail_rate": 0.0125
+      },
+      "anchor_clear_fail": {
+        "n": 20,
+        "binary_agreement": 0.95,
+        "auroc": 0.1053,
+        "mean_score": 76.71,
+        "fail_rate": 0.05
+      },
+      "anchor_clear_pass": {
+        "n": 20,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 79.28,
+        "fail_rate": 0.0
+      }
+    },
+    "llm_as_judge_only": {
+      "ambiguity_hard_case": {
+        "n": 80,
+        "binary_agreement": 0.45,
+        "auroc": 0.462,
+        "mean_score": 57.83,
+        "fail_rate": 0.0125
+      },
+      "anchor_clear_fail": {
+        "n": 20,
+        "binary_agreement": 0.95,
+        "auroc": 0.9474,
+        "mean_score": 63.07,
+        "fail_rate": 0.05
+      },
+      "anchor_clear_pass": {
+        "n": 20,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 79.7,
+        "fail_rate": 0.0
+      }
+    },
+    "no_verification": {
+      "ambiguity_hard_case": {
+        "n": 80,
+        "binary_agreement": 0.6,
+        "auroc": 0.5823,
+        "mean_score": 60.31,
+        "fail_rate": 0.0125
+      },
+      "anchor_clear_fail": {
+        "n": 20,
+        "binary_agreement": 0.95,
+        "auroc": 0.0526,
+        "mean_score": 77.16,
+        "fail_rate": 0.05
+      },
+      "anchor_clear_pass": {
+        "n": 20,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 83.45,
+        "fail_rate": 0.0
+      }
+    },
+    "stacked_logistic_baseline": {
+      "ambiguity_hard_case": {
+        "n": 80,
+        "binary_agreement": 0.025,
+        "auroc": 0.3797,
+        "mean_score": 2.31,
+        "fail_rate": 0.0125
+      },
+      "anchor_clear_fail": {
+        "n": 20,
+        "binary_agreement": 0.95,
+        "auroc": 0.2632,
+        "mean_score": 97.94,
+        "fail_rate": 0.05
+      },
+      "anchor_clear_pass": {
+        "n": 20,
+        "binary_agreement": 1.0,
+        "auroc": 0.5,
+        "mean_score": 99.9,
+        "fail_rate": 0.0
+      }
+    }
+  },
+  "hard_slice_methods": {
+    "the framework_full": {
+      "auroc": 0.5823,
+      "auroc_ci": {
+        "lower": 0.4773,
+        "upper": 0.6923
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.6,
+        "flagged_rate": 0.3875
+      },
+      "binary_agreement": 0.6,
+      "brier_score": 0.163,
+      "expected_calibration_error": 0.3844,
+      "mean_score": 60.31
+    },
+    "latest_score_only": {
+      "auroc": 0.5,
+      "auroc_ci": {
+        "lower": 0.5,
+        "upper": 0.5
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.9875,
+        "flagged_rate": 0.0
+      },
+      "binary_agreement": 0.9875,
+      "brier_score": 0.0146,
+      "expected_calibration_error": 0.0475,
+      "mean_score": 94.0
+    },
+    "mean_historical": {
+      "auroc": 0.6582,
+      "auroc_ci": {
+        "lower": 0.5513,
+        "upper": 0.763
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.975,
+        "flagged_rate": 0.0125
+      },
+      "binary_agreement": 0.975,
+      "brier_score": 0.0767,
+      "expected_calibration_error": 0.2477,
+      "mean_score": 73.98
+    },
+    "llm_as_judge_only": {
+      "auroc": 0.462,
+      "auroc_ci": {
+        "lower": 0.3608,
+        "upper": 0.5738
+      },
+      "threshold_metrics": {
+        "precision": 0.0222,
+        "recall": 1.0,
+        "f1_score": 0.0435,
+        "accuracy": 0.45,
+        "flagged_rate": 0.5625
+      },
+      "binary_agreement": 0.45,
+      "brier_score": 0.1888,
+      "expected_calibration_error": 0.4092,
+      "mean_score": 57.83
+    },
+    "no_verification": {
+      "auroc": 0.5823,
+      "auroc_ci": {
+        "lower": 0.4773,
+        "upper": 0.6923
+      },
+      "threshold_metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "accuracy": 0.6,
+        "flagged_rate": 0.3875
+      },
+      "binary_agreement": 0.6,
+      "brier_score": 0.163,
+      "expected_calibration_error": 0.3844,
+      "mean_score": 60.31
+    },
+    "stacked_logistic_baseline": {
+      "auroc": 0.3797,
+      "auroc_ci": {
+        "lower": 0.2785,
+        "upper": 0.481
+      },
+      "threshold_metrics": {
+        "precision": 0.0127,
+        "recall": 1.0,
+        "f1_score": 0.025,
+        "accuracy": 0.025,
+        "flagged_rate": 0.9875
+      },
+      "binary_agreement": 0.025,
+      "brier_score": 0.0214,
+      "expected_calibration_error": 0.0255,
+      "mean_score": 2.31
+    }
+  },
+  "leave_one_evaluator_out": {
+    "csv": "[REDACTED_PATH]",
+    "n_rows": 18
+  },
+  "best_baseline_by_agreement": {
+    "name": "latest_score_only",
+    "binary_agreement": 0.9833,
+    "delta_vs_the framework": -0.2583
+  },
+  "best_baseline_by_auroc": {
+    "name": "llm_as_judge_only",
+    "auroc": 0.625,
+    "delta_vs_the framework": -0.1758
+  },
+  "claim_boundary": "This experiment is stronger than Exp19, Exp21, or Exp22 alone because it combines an external benchmark source, an ambiguity-bearing subset, and fresh independent evaluator consensus. It still remains bounded: the subset is finite and curated, the evaluation is not live deployment telemetry, and the result does not establish open-world robustness or a guarantee of external generalization.",
+  "conclusion": "MARGINAL"
+}

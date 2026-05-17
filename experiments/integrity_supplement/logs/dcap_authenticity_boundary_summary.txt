@@ -1,0 +1,127 @@
+{
+  "experiment": "25_dcap_authenticity_boundary",
+  "cases": [
+    {
+      "case": "local_policy_positive_control",
+      "expected_status": "verified",
+      "actual_status": "verified",
+      "returncode": 0,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/dcap_authenticity_boundary/local_policy_positive_control",
+      "note": "positive control with matching policy and binding",
+      "verification": {
+        "returncode": 0,
+        "result": {
+          "status": "verified",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/dcap_authenticity_boundary/local_policy_positive_control/attestations/1-0xabc123-0-9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39.json",
+          "attestationHash": "9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39"
+        }
+      }
+    },
+    {
+      "case": "local_policy_rejects_bad_binding",
+      "expected_status": "report_data_mismatch",
+      "actual_status": "report_data_mismatch",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/dcap_authenticity_boundary/local_policy_rejects_bad_binding",
+      "note": "wrong report_data should be rejected locally",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "report_data_mismatch",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/dcap_authenticity_boundary/local_policy_rejects_bad_binding/attestations/1-0xabc123-0-3f4305fdf3ca37af7ead53b35d4538455289b68ed1a7252965034b9f8489d037.json",
+          "message": "SGX quote report_data does not match sha256(eventKey + manifestHash + evidenceRoot)"
+        }
+      }
+    },
+    {
+      "case": "local_policy_rejects_bad_structure",
+      "expected_status": "sgx_quote_invalid",
+      "actual_status": "sgx_quote_invalid",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/dcap_authenticity_boundary/local_policy_rejects_bad_structure",
+      "note": "invalid quote structure should be rejected locally",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "sgx_quote_invalid",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/dcap_authenticity_boundary/local_policy_rejects_bad_structure/attestations/1-0xabc123-0-bde5a656f6a490f600d6c229982eab77539300728ab93df872bf5a7b608709c7.json",
+          "message": "expected quote version 3, got 4"
+        }
+      }
+    },
+    {
+      "case": "local_policy_accepts_unsigned_synthetic_quote",
+      "expected_status": "verified",
+      "actual_status": "verified",
+      "returncode": 0,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/dcap_authenticity_boundary/local_policy_accepts_unsigned_synthetic_quote",
+      "note": "structurally valid quote with zero auth_data and no demonstrated DCAP authenticity chain still passes local verifier",
+      "verification": {
+        "returncode": 0,
+        "result": {
+          "status": "verified",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/dcap_authenticity_boundary/local_policy_accepts_unsigned_synthetic_quote/attestations/1-0xabc123-0-9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39.json",
+          "attestationHash": "9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39"
+        }
+      }
+    }
+  ],
+  "trust_boundary_matrix": [
+    {
+      "layer": "local_verifier",
+      "responsibility": "local",
+      "claim": "Persisted attestation verification only checks filename hash, bundle shape, configured verifier pins, SGX quote parsing, and report_data binding.",
+      "evidence_file": "/tmp/agent_web3_workspace/agent-web3-main-0b0b4b4d7a284612a8fefb61c65b0c8a6d86aa97/docs/verification-methods.md",
+      "evidence_excerpt": "5. \u5982\u679c\u63d0\u4f9b\u4e86 expectedVerifier\uff0c\u9010\u5b57\u6bb5\u6bd4\u5bf9\n6. \u5982\u679c verifyReportDataBinding === true \u4e14 quoteFormat === \"sgx-dcap-v3\"\uff1a\n   a. \u89e3\u6790 SGX DCAP v3 \u4e8c\u8fdb\u5236 quote\n   b. \u8ba1\u7b97\u671f\u671b\u7684 report_data\n   c. \u4e0e quote \u4e2d\u7684 report_data \u5b57\u6bb5\u9010\u5b57\u8282\u6bd4\u5bf9"
+    },
+    {
+      "layer": "local_verifier",
+      "responsibility": "local",
+      "claim": "The SGX parser documents auth data as ECDSA signature + cert chain, but current parser only validates version, tee type, mrEnclave, and reportData.",
+      "evidence_file": "/tmp/agent_web3_workspace/agent-web3-main-0b0b4b4d7a284612a8fefb61c65b0c8a6d86aa97/sandbox/src/attestation/sgxDcapQuoteValidator.ts",
+      "evidence_excerpt": "Auth Data (variable, offset 432):\n  [432..435]  auth_data_size (uint32 LE)\n  [436..]     ECDSA signature + certification data"
+    },
+    {
+      "layer": "external_sgx_host",
+      "responsibility": "external_sgx_host",
+      "claim": "The attestation API runs on an SGX-capable host and is responsible for producing real SGX DCAP v3 quotes.",
+      "evidence_file": "/tmp/agent_web3_workspace/agent-web3-main-0b0b4b4d7a284612a8fefb61c65b0c8a6d86aa97/infra/attestation/README.md",
+      "evidence_excerpt": "This directory ships the Docker image and compose file for the Agent Shenji attestation API service. It runs on the SGX-capable host ... and produces real SGX DCAP v3 quotes"
+    },
+    {
+      "layer": "intel_dcap_runtime",
+      "responsibility": "intel_dcap_runtime",
+      "claim": "The SGX host setup installs Intel DCAP quote generation and quote verification libraries and configures PCS collateral access.",
+      "evidence_file": "/tmp/agent_web3_workspace/agent-web3-main-0b0b4b4d7a284612a8fefb61c65b0c8a6d86aa97/sandbox/sgx/setup-sgx-env.sh",
+      "evidence_excerpt": "apt-get install -y libsgx-dcap-ql libsgx-dcap-ql-dev libsgx-dcap-quote-verify libsgx-dcap-quote-verify-dev ...\n\"pccs_url\": \"https://api.trustedservices.intel.com/sgx/certification/v4/\""
+    },
+    {
+      "layer": "listener_policy",
+      "responsibility": "local",
+      "claim": "Production listener env only pins provider type, measurement, quote format, and report_data binding; it does not expose local collateral-validation knobs.",
+      "evidence_file": "/tmp/agent_web3_workspace/agent-web3-main-0b0b4b4d7a284612a8fefb61c65b0c8a6d86aa97/infra/production/.env.example",
+      "evidence_excerpt": "AUDIT_ATTESTATION_EXPECTED_PROVIDER_TYPE\nAUDIT_ATTESTATION_EXPECTED_MEASUREMENT\nAUDIT_ATTESTATION_EXPECTED_QUOTE_FORMAT\nAUDIT_ATTESTATION_VERIFY_REPORT_DATA_BINDING=true"
+    },
+    {
+      "layer": "production_smoke",
+      "responsibility": "external_sgx_host",
+      "claim": "Production E2E confirms attestation API health, online pinning, and optional offline attestationVerify, but relies on a separate SGX machine for real quote generation.",
+      "evidence_file": "/tmp/agent_web3_workspace/agent-web3-main-0b0b4b4d7a284612a8fefb61c65b0c8a6d86aa97/infra/production/scripts/run-tee-e2e.sh",
+      "evidence_excerpt": "listener calls SGX Attestation API\nlistener validates MRENCLAVE + report_data binding online\nOptional: pull the attestation bundle ... and run the offline attestationVerify CLI"
+    },
+    {
+      "layer": "deployed_status",
+      "responsibility": "external_sgx_host",
+      "claim": "The deployed production note records successful SGX DCAP v3 closed-loop operation, but the runtime quote generation is on the M6ce SGX host.",
+      "evidence_file": "/tmp/agent_web3_workspace/agent-web3-main-0b0b4b4d7a284612a8fefb61c65b0c8a6d86aa97/docs/status/2026-04-16-tee-production.md",
+      "evidence_excerpt": "stake() \u2192 AuditRequested \u2192 listener \u2192 SGX Attestation API (Gramine enclave)\n\u2192 MRENCLAVE + report_data \u5728\u7ebf\u6821\u9a8c"
+    }
+  ],
+  "detected_expected_count": 4,
+  "total_cases": 4,
+  "conclusion": "Local verification enforces SGX quote structure, configured pins, and report_data binding, but executable synthetic evidence shows that a structurally valid quote with no demonstrated DCAP signature or collateral chain still verifies locally; full authenticity and freshness remain delegated to the SGX/DCAP runtime path."
+}

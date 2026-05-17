@@ -1,0 +1,66 @@
+{
+  "experiment": "06_external_agent_generalization",
+  "n_external_agents": 3,
+  "n_episodes_tested": 450,
+  "agent_agreements": {
+    "gpt-4-turbo": {
+      "raw_binary_agreement": 0.4889,
+      "raw_binary_agreement_ci": {
+        "lower": 0.4444,
+        "upper": 0.5356
+      },
+      "threshold_transferred_agreement": 0.7511,
+      "threshold_transferred_agreement_ci": {
+        "lower": 0.7111,
+        "upper": 0.7889
+      },
+      "score_correlation": 0.3213,
+      "score_correlation_ci": {
+        "lower": 0.2374,
+        "upper": 0.4045
+      },
+      "mean_score": 54.64
+    },
+    "claude-3-opus": {
+      "raw_binary_agreement": 0.4778,
+      "raw_binary_agreement_ci": {
+        "lower": 0.4311,
+        "upper": 0.5222
+      },
+      "threshold_transferred_agreement": 0.74,
+      "threshold_transferred_agreement_ci": {
+        "lower": 0.7022,
+        "upper": 0.78
+      },
+      "score_correlation": 0.3318,
+      "score_correlation_ci": {
+        "lower": 0.2516,
+        "upper": 0.4139
+      },
+      "mean_score": 54.68
+    },
+    "gemini-1.5-pro": {
+      "raw_binary_agreement": 0.5289,
+      "raw_binary_agreement_ci": {
+        "lower": 0.4822,
+        "upper": 0.5756
+      },
+      "threshold_transferred_agreement": 0.7444,
+      "threshold_transferred_agreement_ci": {
+        "lower": 0.7022,
+        "upper": 0.7844
+      },
+      "score_correlation": 0.3163,
+      "score_correlation_ci": {
+        "lower": 0.2343,
+        "upper": 0.3951
+      },
+      "mean_score": 50.68
+    }
+  },
+  "cross_agent_correlation": 0.7002,
+  "mean_raw_agreement": 0.4985,
+  "mean_threshold_transferred_agreement": 0.7452,
+  "mean_score_correlation": 0.3231,
+  "conclusion": "PASS"
+}

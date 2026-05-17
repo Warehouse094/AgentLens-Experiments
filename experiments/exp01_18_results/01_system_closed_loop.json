@@ -1,0 +1,29 @@
+{
+  "experiment": "01_system_closed_loop",
+  "n_triplicate_cells": 150,
+  "primary_dimension_icc": 0.7672,
+  "primary_dimension_icc_ci": {
+    "lower": 0.6656,
+    "upper": 0.8505
+  },
+  "composite_score_icc": 0.702,
+  "composite_score_icc_ci": {
+    "lower": 0.605,
+    "upper": 0.7817
+  },
+  "label_consistency_rate": 0.74,
+  "label_consistency_rate_ci": {
+    "lower": 0.6667,
+    "upper": 0.8067
+  },
+  "reproducibility_rate": 0.8733,
+  "reproducibility_rate_ci": {
+    "lower": 0.82,
+    "upper": 0.9267
+  },
+  "mean_primary_run1": 73.13,
+  "mean_primary_run2": 73.12,
+  "mean_primary_run3": 73.48,
+  "max_primary_score_deviation": 35.83,
+  "conclusion": "PASS"
+}

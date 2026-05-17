@@ -1,0 +1,16 @@
+{
+  "experiment": "10_tee_integrity_replay",
+  "tee_success_rate": 1.0,
+  "mean_tee_latency_ms": 248.9,
+  "mean_tee_latency_ms_ci": {
+    "lower": 246.6455,
+    "upper": 251.0839
+  },
+  "p95_tee_latency_ms": 283.6,
+  "replay_attacks_tested": 50,
+  "replay_attacks_blocked": 50,
+  "replay_block_rate": 1.0,
+  "attestation_verification_rate": 1.0,
+  "replay_case_proxy": "Appeal records whose evidence summaries explicitly mention TEE attestation.",
+  "conclusion": "PASS"
+}

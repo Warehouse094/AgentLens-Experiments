@@ -1,0 +1,31 @@
+{
+  "experiment": "05_human_gold_agreement",
+  "n_annotations": 450,
+  "n_annotators": 5,
+  "inter_annotator_agreement_binary": 0.9787,
+  "inter_annotator_agreement_binary_ci": {
+    "lower": 0.9689,
+    "upper": 0.9876
+  },
+  "inter_annotator_pearson_r": 0.931,
+  "inter_annotator_score_dispersion": 2.5487,
+  "inter_annotator_score_dispersion_ci": {
+    "lower": 2.4686,
+    "upper": 2.6309
+  },
+  "cohens_kappa": 0.7464,
+  "cohens_kappa_ci": {
+    "lower": 0.7464,
+    "upper": 0.7464
+  },
+  "system_human_agreement": 0.3444,
+  "system_human_agreement_ci": {
+    "lower": 0.3,
+    "upper": 0.3889
+  },
+  "mean_consensus_margin": 4.8756,
+  "full_unanimity_rate": 0.9556,
+  "mean_annotator_count": 5.0,
+  "interpretation": "High annotator-to-annotator reliability with low system-to-human alignment under five-annotator consensus.",
+  "conclusion": "PASS"
+}

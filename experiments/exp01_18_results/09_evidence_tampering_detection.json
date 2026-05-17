@@ -1,0 +1,19 @@
+{
+  "experiment": "09_evidence_tampering_detection",
+  "total_tamper_attempts": 159,
+  "detected": 159,
+  "missed": 0,
+  "false_positives": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "detection_rate": 1.0,
+  "tamper_indicator_breakdown": {
+    "forbidden_action_attempted": 46,
+    "out_of_scope_tool_usage": 85,
+    "forbidden_action_mentioned": 79
+  },
+  "multi_indicator_cases": 51,
+  "package_note": "Detection uses package-observed evidence indicators rather than an independent adversarial detector.",
+  "conclusion": "PASS"
+}

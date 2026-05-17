@@ -1,0 +1,56 @@
+{
+  "experiment": "07_prospective_temporal_decision",
+  "auc_scores": {
+    "the framework_full": 0.8676,
+    "latest_score_only": 0.6721,
+    "mean_historical": 0.8621,
+    "ema_score": 0.8568,
+    "beta_reputation": 0.5632,
+    "elo_glicko": 0.3882,
+    "human_only_review": 0.7137,
+    "llm_as_judge_only": 0.7883,
+    "onchain_reputation_only": 0.7583,
+    "no_appeal": 0.5211,
+    "no_verification": 0.7931
+  },
+  "the framework_auc": 0.8676,
+  "the framework_auc_ci": {
+    "lower": 0.8229,
+    "upper": 0.9113
+  },
+  "best_baseline_name": "mean_historical",
+  "best_baseline_auc": 0.8621,
+  "best_baseline_auc_ci": {
+    "lower": 0.8197,
+    "upper": 0.8997
+  },
+  "the framework_advantage": 0.0055,
+  "delta_auc_ci": {
+    "lower": -0.0389,
+    "upper": 0.0461
+  },
+  "paired_permutation_p_value": 0.7971,
+  "per_domain_auc": {
+    "DAO operations": {
+      "the framework_full": 0.9183,
+      "mean_historical": 0.9081
+    },
+    "DeFi risk monitoring": {
+      "the framework_full": 0.8857,
+      "mean_historical": 0.8929
+    },
+    "Incident response": {
+      "the framework_full": 0.8591,
+      "mean_historical": 0.8535
+    },
+    "Smart-contract release review": {
+      "the framework_full": 0.8222,
+      "mean_historical": 0.8244
+    },
+    "Wallet authorization guard": {
+      "the framework_full": 0.8154,
+      "mean_historical": 0.8293
+    }
+  },
+  "conclusion": "PASS"
+}

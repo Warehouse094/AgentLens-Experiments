@@ -1,0 +1,27 @@
+{
+  "experiment": "16_fairness_subgroup_analysis",
+  "n_domains": 5,
+  "domain_score_means": {
+    "DAO operations": 67.6991,
+    "DeFi risk monitoring": 67.1827,
+    "Incident response": 64.8088,
+    "Smart-contract release review": 67.8036,
+    "Wallet authorization guard": 67.2544
+  },
+  "domain_unsafe_rate": {
+    "DAO operations": 0.6333,
+    "DeFi risk monitoring": 0.6889,
+    "Incident response": 0.7222,
+    "Smart-contract release review": 0.6667,
+    "Wallet authorization guard": 0.6889
+  },
+  "max_cross_domain_disparity": 8.76,
+  "max_cross_domain_disparity_ci": {
+    "lower": 6.4781,
+    "upper": 14.6195
+  },
+  "domain_anova_F": 1.19,
+  "domain_anova_p": "3.16e-01",
+  "fairness_criterion_met": true,
+  "conclusion": "PASS"
+}

@@ -1,0 +1,746 @@
+{
+  "experiment": "26_domain_holdout_transfer",
+  "source": "Domain-held-out readout over the independent external-consensus transfer table from Exp21",
+  "target_definition": "Measure whether external-consensus transfer degrades gracefully or collapses when read one domain at a time rather than only in aggregate.",
+  "n_episode_dimension_units": 450,
+  "n_domains": 5,
+  "frozen_threshold": 60.0,
+  "overall_methods": {
+    "the framework_full": {
+      "n": 450,
+      "fail_rate": 0.3733,
+      "binary_agreement": 0.5489,
+      "auroc": 0.576,
+      "auroc_ci": {
+        "lower": 0.5238,
+        "upper": 0.6277
+      },
+      "threshold_metrics": {
+        "precision": 0.3826,
+        "recall": 0.3393,
+        "f1_score": 0.3596,
+        "accuracy": 0.5489,
+        "flagged_rate": 0.3311
+      },
+      "mean_score": 66.9497
+    },
+    "latest_score_only": {
+      "n": 450,
+      "fail_rate": 0.3733,
+      "binary_agreement": 0.6178,
+      "auroc": 0.5807,
+      "auroc_ci": {
+        "lower": 0.5241,
+        "upper": 0.6361
+      },
+      "threshold_metrics": {
+        "precision": 0.4783,
+        "recall": 0.2619,
+        "f1_score": 0.3385,
+        "accuracy": 0.6178,
+        "flagged_rate": 0.2044
+      },
+      "mean_score": 73.2443
+    },
+    "mean_historical": {
+      "n": 450,
+      "fail_rate": 0.3733,
+      "binary_agreement": 0.5356,
+      "auroc": 0.4988,
+      "auroc_ci": {
+        "lower": 0.4454,
+        "upper": 0.5524
+      },
+      "threshold_metrics": {
+        "precision": 0.2469,
+        "recall": 0.119,
+        "f1_score": 0.1606,
+        "accuracy": 0.5356,
+        "flagged_rate": 0.18
+      },
+      "mean_score": 66.7649
+    },
+    "llm_as_judge_only": {
+      "n": 450,
+      "fail_rate": 0.3733,
+      "binary_agreement": 0.6578,
+      "auroc": 0.753,
+      "auroc_ci": {
+        "lower": 0.704,
+        "upper": 0.7979
+      },
+      "threshold_metrics": {
+        "precision": 0.7692,
+        "recall": 0.119,
+        "f1_score": 0.2062,
+        "accuracy": 0.6578,
+        "flagged_rate": 0.0578
+      },
+      "mean_score": 75.7408
+    },
+    "no_verification": {
+      "n": 450,
+      "fail_rate": 0.3733,
+      "binary_agreement": 0.6556,
+      "auroc": 0.6746,
+      "auroc_ci": {
+        "lower": 0.6219,
+        "upper": 0.7258
+      },
+      "threshold_metrics": {
+        "precision": 0.8421,
+        "recall": 0.0952,
+        "f1_score": 0.1711,
+        "accuracy": 0.6556,
+        "flagged_rate": 0.0422
+      },
+      "mean_score": 76.4448
+    },
+    "human_only_review": {
+      "n": 450,
+      "fail_rate": 0.3733,
+      "binary_agreement": 0.6111,
+      "auroc": 0.3582,
+      "auroc_ci": {
+        "lower": 0.3112,
+        "upper": 0.4069
+      },
+      "threshold_metrics": {
+        "precision": 0.2941,
+        "recall": 0.0298,
+        "f1_score": 0.0541,
+        "accuracy": 0.6111,
+        "flagged_rate": 0.0378
+      },
+      "mean_score": 81.3244
+    }
+  },
+  "per_domain": {
+    "DAO operations": {
+      "the framework_full": {
+        "n": 90,
+        "fail_rate": 0.3333,
+        "binary_agreement": 0.5778,
+        "auroc": 0.5253,
+        "auroc_ci": {
+          "lower": 0.3818,
+          "upper": 0.6546
+        },
+        "threshold_metrics": {
+          "precision": 0.3333,
+          "recall": 0.2667,
+          "f1_score": 0.2963,
+          "accuracy": 0.5778,
+          "flagged_rate": 0.2667
+        },
+        "mean_score": 67.6991
+      },
+      "latest_score_only": {
+        "n": 90,
+        "fail_rate": 0.3333,
+        "binary_agreement": 0.6556,
+        "auroc": 0.5744,
+        "auroc_ci": {
+          "lower": 0.4545,
+          "upper": 0.7019
+        },
+        "threshold_metrics": {
+          "precision": 0.4706,
+          "recall": 0.2667,
+          "f1_score": 0.3404,
+          "accuracy": 0.6556,
+          "flagged_rate": 0.1889
+        },
+        "mean_score": 75.0572
+      },
+      "mean_historical": {
+        "n": 90,
+        "fail_rate": 0.3333,
+        "binary_agreement": 0.6111,
+        "auroc": 0.3872,
+        "auroc_ci": {
+          "lower": 0.2744,
+          "upper": 0.5111
+        },
+        "threshold_metrics": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "accuracy": 0.6111,
+          "flagged_rate": 0.0556
+        },
+        "mean_score": 68.5466
+      },
+      "llm_as_judge_only": {
+        "n": 90,
+        "fail_rate": 0.3333,
+        "binary_agreement": 0.7111,
+        "auroc": 0.7514,
+        "auroc_ci": {
+          "lower": 0.6383,
+          "upper": 0.8451
+        },
+        "threshold_metrics": {
+          "precision": 1.0,
+          "recall": 0.1333,
+          "f1_score": 0.2353,
+          "accuracy": 0.7111,
+          "flagged_rate": 0.0444
+        },
+        "mean_score": 75.118
+      },
+      "no_verification": {
+        "n": 90,
+        "fail_rate": 0.3333,
+        "binary_agreement": 0.7111,
+        "auroc": 0.6422,
+        "auroc_ci": {
+          "lower": 0.5185,
+          "upper": 0.7612
+        },
+        "threshold_metrics": {
+          "precision": 1.0,
+          "recall": 0.1333,
+          "f1_score": 0.2353,
+          "accuracy": 0.7111,
+          "flagged_rate": 0.0444
+        },
+        "mean_score": 76.0769
+      },
+      "human_only_review": {
+        "n": 90,
+        "fail_rate": 0.3333,
+        "binary_agreement": 0.6778,
+        "auroc": 0.4031,
+        "auroc_ci": {
+          "lower": 0.2881,
+          "upper": 0.5256
+        },
+        "threshold_metrics": {
+          "precision": 1.0,
+          "recall": 0.0333,
+          "f1_score": 0.0645,
+          "accuracy": 0.6778,
+          "flagged_rate": 0.0111
+        },
+        "mean_score": 81.8111
+      }
+    },
+    "DeFi risk monitoring": {
+      "the framework_full": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.5111,
+        "auroc": 0.6081,
+        "auroc_ci": {
+          "lower": 0.481,
+          "upper": 0.7148
+        },
+        "threshold_metrics": {
+          "precision": 0.3636,
+          "recall": 0.3429,
+          "f1_score": 0.3529,
+          "accuracy": 0.5111,
+          "flagged_rate": 0.3667
+        },
+        "mean_score": 67.1827
+      },
+      "latest_score_only": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.6111,
+        "auroc": 0.5764,
+        "auroc_ci": {
+          "lower": 0.4488,
+          "upper": 0.7001
+        },
+        "threshold_metrics": {
+          "precision": 0.5,
+          "recall": 0.2286,
+          "f1_score": 0.3137,
+          "accuracy": 0.6111,
+          "flagged_rate": 0.1778
+        },
+        "mean_score": 74.0231
+      },
+      "mean_historical": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.4556,
+        "auroc": 0.4784,
+        "auroc_ci": {
+          "lower": 0.3492,
+          "upper": 0.592
+        },
+        "threshold_metrics": {
+          "precision": 0.25,
+          "recall": 0.2,
+          "f1_score": 0.2222,
+          "accuracy": 0.4556,
+          "flagged_rate": 0.3111
+        },
+        "mean_score": 66.1833
+      },
+      "llm_as_judge_only": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.6444,
+        "auroc": 0.747,
+        "auroc_ci": {
+          "lower": 0.6402,
+          "upper": 0.8387
+        },
+        "threshold_metrics": {
+          "precision": 0.7143,
+          "recall": 0.1429,
+          "f1_score": 0.2381,
+          "accuracy": 0.6444,
+          "flagged_rate": 0.0778
+        },
+        "mean_score": 75.9055
+      },
+      "no_verification": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.6444,
+        "auroc": 0.6644,
+        "auroc_ci": {
+          "lower": 0.5406,
+          "upper": 0.7861
+        },
+        "threshold_metrics": {
+          "precision": 0.8,
+          "recall": 0.1143,
+          "f1_score": 0.2,
+          "accuracy": 0.6444,
+          "flagged_rate": 0.0556
+        },
+        "mean_score": 76.6913
+      },
+      "human_only_review": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.5667,
+        "auroc": 0.4132,
+        "auroc_ci": {
+          "lower": 0.2895,
+          "upper": 0.5366
+        },
+        "threshold_metrics": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "accuracy": 0.5667,
+          "flagged_rate": 0.0444
+        },
+        "mean_score": 83.0444
+      }
+    },
+    "Incident response": {
+      "the framework_full": {
+        "n": 90,
+        "fail_rate": 0.3556,
+        "binary_agreement": 0.5222,
+        "auroc": 0.6261,
+        "auroc_ci": {
+          "lower": 0.4956,
+          "upper": 0.7502
+        },
+        "threshold_metrics": {
+          "precision": 0.3778,
+          "recall": 0.5312,
+          "f1_score": 0.4416,
+          "accuracy": 0.5222,
+          "flagged_rate": 0.5
+        },
+        "mean_score": 64.8088
+      },
+      "latest_score_only": {
+        "n": 90,
+        "fail_rate": 0.3556,
+        "binary_agreement": 0.6333,
+        "auroc": 0.6517,
+        "auroc_ci": {
+          "lower": 0.5343,
+          "upper": 0.7711
+        },
+        "threshold_metrics": {
+          "precision": 0.48,
+          "recall": 0.375,
+          "f1_score": 0.4211,
+          "accuracy": 0.6333,
+          "flagged_rate": 0.2778
+        },
+        "mean_score": 69.8652
+      },
+      "mean_historical": {
+        "n": 90,
+        "fail_rate": 0.3556,
+        "binary_agreement": 0.3333,
+        "auroc": 0.4585,
+        "auroc_ci": {
+          "lower": 0.3305,
+          "upper": 0.5796
+        },
+        "threshold_metrics": {
+          "precision": 0.15,
+          "recall": 0.1875,
+          "f1_score": 0.1667,
+          "accuracy": 0.3333,
+          "flagged_rate": 0.4444
+        },
+        "mean_score": 64.5275
+      },
+      "llm_as_judge_only": {
+        "n": 90,
+        "fail_rate": 0.3556,
+        "binary_agreement": 0.6778,
+        "auroc": 0.8055,
+        "auroc_ci": {
+          "lower": 0.7166,
+          "upper": 0.8974
+        },
+        "threshold_metrics": {
+          "precision": 0.6364,
+          "recall": 0.2188,
+          "f1_score": 0.3256,
+          "accuracy": 0.6778,
+          "flagged_rate": 0.1222
+        },
+        "mean_score": 73.04
+      },
+      "no_verification": {
+        "n": 90,
+        "fail_rate": 0.3556,
+        "binary_agreement": 0.6778,
+        "auroc": 0.7753,
+        "auroc_ci": {
+          "lower": 0.682,
+          "upper": 0.8635
+        },
+        "threshold_metrics": {
+          "precision": 0.7143,
+          "recall": 0.1562,
+          "f1_score": 0.2564,
+          "accuracy": 0.6778,
+          "flagged_rate": 0.0778
+        },
+        "mean_score": 74.6754
+      },
+      "human_only_review": {
+        "n": 90,
+        "fail_rate": 0.3556,
+        "binary_agreement": 0.6333,
+        "auroc": 0.3257,
+        "auroc_ci": {
+          "lower": 0.2175,
+          "upper": 0.4365
+        },
+        "threshold_metrics": {
+          "precision": 0.3333,
+          "recall": 0.0312,
+          "f1_score": 0.0571,
+          "accuracy": 0.6333,
+          "flagged_rate": 0.0333
+        },
+        "mean_score": 82.1667
+      }
+    },
+    "Smart-contract release review": {
+      "the framework_full": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.5222,
+        "auroc": 0.5236,
+        "auroc_ci": {
+          "lower": 0.4023,
+          "upper": 0.6411
+        },
+        "threshold_metrics": {
+          "precision": 0.3333,
+          "recall": 0.2286,
+          "f1_score": 0.2712,
+          "accuracy": 0.5222,
+          "flagged_rate": 0.2667
+        },
+        "mean_score": 67.8036
+      },
+      "latest_score_only": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.6222,
+        "auroc": 0.5979,
+        "auroc_ci": {
+          "lower": 0.4737,
+          "upper": 0.715
+        },
+        "threshold_metrics": {
+          "precision": 0.5238,
+          "recall": 0.3143,
+          "f1_score": 0.3929,
+          "accuracy": 0.6222,
+          "flagged_rate": 0.2333
+        },
+        "mean_score": 71.8598
+      },
+      "mean_historical": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.6333,
+        "auroc": 0.4203,
+        "auroc_ci": {
+          "lower": 0.2923,
+          "upper": 0.541
+        },
+        "threshold_metrics": {
+          "precision": 1.0,
+          "recall": 0.0571,
+          "f1_score": 0.1081,
+          "accuracy": 0.6333,
+          "flagged_rate": 0.0222
+        },
+        "mean_score": 68.2497
+      },
+      "llm_as_judge_only": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.6444,
+        "auroc": 0.7722,
+        "auroc_ci": {
+          "lower": 0.6633,
+          "upper": 0.866
+        },
+        "threshold_metrics": {
+          "precision": 1.0,
+          "recall": 0.0857,
+          "f1_score": 0.1579,
+          "accuracy": 0.6444,
+          "flagged_rate": 0.0333
+        },
+        "mean_score": 76.1541
+      },
+      "no_verification": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.6333,
+        "auroc": 0.6413,
+        "auroc_ci": {
+          "lower": 0.5034,
+          "upper": 0.7666
+        },
+        "threshold_metrics": {
+          "precision": 1.0,
+          "recall": 0.0571,
+          "f1_score": 0.1081,
+          "accuracy": 0.6333,
+          "flagged_rate": 0.0222
+        },
+        "mean_score": 76.8147
+      },
+      "human_only_review": {
+        "n": 90,
+        "fail_rate": 0.3889,
+        "binary_agreement": 0.6,
+        "auroc": 0.3616,
+        "auroc_ci": {
+          "lower": 0.2486,
+          "upper": 0.4738
+        },
+        "threshold_metrics": {
+          "precision": 0.4,
+          "recall": 0.0571,
+          "f1_score": 0.1,
+          "accuracy": 0.6,
+          "flagged_rate": 0.0556
+        },
+        "mean_score": 79.8778
+      }
+    },
+    "Wallet authorization guard": {
+      "the framework_full": {
+        "n": 90,
+        "fail_rate": 0.4,
+        "binary_agreement": 0.6111,
+        "auroc": 0.6052,
+        "auroc_ci": {
+          "lower": 0.4761,
+          "upper": 0.7214
+        },
+        "threshold_metrics": {
+          "precision": 0.5217,
+          "recall": 0.3333,
+          "f1_score": 0.4068,
+          "accuracy": 0.6111,
+          "flagged_rate": 0.2556
+        },
+        "mean_score": 67.2544
+      },
+      "latest_score_only": {
+        "n": 90,
+        "fail_rate": 0.4,
+        "binary_agreement": 0.5667,
+        "auroc": 0.5121,
+        "auroc_ci": {
+          "lower": 0.3897,
+          "upper": 0.6358
+        },
+        "threshold_metrics": {
+          "precision": 0.3846,
+          "recall": 0.1389,
+          "f1_score": 0.2041,
+          "accuracy": 0.5667,
+          "flagged_rate": 0.1444
+        },
+        "mean_score": 75.4163
+      },
+      "mean_historical": {
+        "n": 90,
+        "fail_rate": 0.4,
+        "binary_agreement": 0.6444,
+        "auroc": 0.5093,
+        "auroc_ci": {
+          "lower": 0.3828,
+          "upper": 0.6385
+        },
+        "threshold_metrics": {
+          "precision": 0.8333,
+          "recall": 0.1389,
+          "f1_score": 0.2381,
+          "accuracy": 0.6444,
+          "flagged_rate": 0.0667
+        },
+        "mean_score": 66.3174
+      },
+      "llm_as_judge_only": {
+        "n": 90,
+        "fail_rate": 0.4,
+        "binary_agreement": 0.6111,
+        "auroc": 0.7418,
+        "auroc_ci": {
+          "lower": 0.6281,
+          "upper": 0.8391
+        },
+        "threshold_metrics": {
+          "precision": 1.0,
+          "recall": 0.0278,
+          "f1_score": 0.0541,
+          "accuracy": 0.6111,
+          "flagged_rate": 0.0111
+        },
+        "mean_score": 78.4865
+      },
+      "no_verification": {
+        "n": 90,
+        "fail_rate": 0.4,
+        "binary_agreement": 0.6111,
+        "auroc": 0.6667,
+        "auroc_ci": {
+          "lower": 0.5361,
+          "upper": 0.7873
+        },
+        "threshold_metrics": {
+          "precision": 1.0,
+          "recall": 0.0278,
+          "f1_score": 0.0541,
+          "accuracy": 0.6111,
+          "flagged_rate": 0.0111
+        },
+        "mean_score": 77.9656
+      },
+      "human_only_review": {
+        "n": 90,
+        "fail_rate": 0.4,
+        "binary_agreement": 0.5778,
+        "auroc": 0.2883,
+        "auroc_ci": {
+          "lower": 0.1843,
+          "upper": 0.4017
+        },
+        "threshold_metrics": {
+          "precision": 0.25,
+          "recall": 0.0278,
+          "f1_score": 0.05,
+          "accuracy": 0.5778,
+          "flagged_rate": 0.0444
+        },
+        "mean_score": 79.7222
+      }
+    }
+  },
+  "domain_holdout_table": [
+    {
+      "held_out_domain": "DAO operations",
+      "n": 90,
+      "the framework_full_auroc": 0.5253,
+      "overall_the framework_auroc": 0.576,
+      "delta_from_overall": -0.0507,
+      "best_baseline": "llm_as_judge_only",
+      "best_baseline_auroc": 0.7514,
+      "delta_vs_best_baseline": -0.2261,
+      "the framework_binary_agreement": 0.5778
+    },
+    {
+      "held_out_domain": "DeFi risk monitoring",
+      "n": 90,
+      "the framework_full_auroc": 0.6081,
+      "overall_the framework_auroc": 0.576,
+      "delta_from_overall": 0.0321,
+      "best_baseline": "llm_as_judge_only",
+      "best_baseline_auroc": 0.747,
+      "delta_vs_best_baseline": -0.1389,
+      "the framework_binary_agreement": 0.5111
+    },
+    {
+      "held_out_domain": "Incident response",
+      "n": 90,
+      "the framework_full_auroc": 0.6261,
+      "overall_the framework_auroc": 0.576,
+      "delta_from_overall": 0.0501,
+      "best_baseline": "llm_as_judge_only",
+      "best_baseline_auroc": 0.8055,
+      "delta_vs_best_baseline": -0.1794,
+      "the framework_binary_agreement": 0.5222
+    },
+    {
+      "held_out_domain": "Smart-contract release review",
+      "n": 90,
+      "the framework_full_auroc": 0.5236,
+      "overall_the framework_auroc": 0.576,
+      "delta_from_overall": -0.0524,
+      "best_baseline": "llm_as_judge_only",
+      "best_baseline_auroc": 0.7722,
+      "delta_vs_best_baseline": -0.2486,
+      "the framework_binary_agreement": 0.5222
+    },
+    {
+      "held_out_domain": "Wallet authorization guard",
+      "n": 90,
+      "the framework_full_auroc": 0.6052,
+      "overall_the framework_auroc": 0.576,
+      "delta_from_overall": 0.0292,
+      "best_baseline": "llm_as_judge_only",
+      "best_baseline_auroc": 0.7418,
+      "delta_vs_best_baseline": -0.1366,
+      "the framework_binary_agreement": 0.6111
+    }
+  ],
+  "the framework_overall_auroc": 0.576,
+  "the framework_domain_auroc_range": {
+    "min": 0.5236,
+    "max": 0.6261,
+    "mean": 0.5777
+  },
+  "the framework_delta_from_overall_range": {
+    "min": -0.0524,
+    "max": 0.0501,
+    "mean": 0.0017
+  },
+  "best_baseline_overall": {
+    "name": "llm_as_judge_only",
+    "auroc": 0.753,
+    "delta_vs_the framework": -0.177
+  },
+  "domains_where_the framework_beats_best_baseline": 0,
+  "claim_boundary": "This experiment improves the domain-scope story because it shows how external-consensus transfer behaves per domain rather than only in aggregate. But it is still a within-package holdout analysis over five Web3 governance domains, not proof of open-world cross-domain robustness.",
+  "conclusion": "MARGINAL"
+}

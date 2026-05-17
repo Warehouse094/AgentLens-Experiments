@@ -1,0 +1,15 @@
+{
+  "experiment": "11_zk_proof_integrity",
+  "total_proofs_generated": 2651,
+  "proof_verification_rate": 1.0,
+  "mean_proof_gen_ms": 1827.1,
+  "mean_proof_gen_ms_ci": {
+    "lower": 1816.2869,
+    "upper": 1838.5156
+  },
+  "p95_proof_gen_ms": 1991.0,
+  "proof_size_bytes": 288,
+  "verification_time_ms": 12,
+  "soundness_error_bound": "reported_from_source_artifact",
+  "conclusion": "PASS"
+}

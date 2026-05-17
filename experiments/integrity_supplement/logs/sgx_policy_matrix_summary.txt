@@ -1,0 +1,142 @@
+{
+  "experiment": "22_sgx_policy_matrix",
+  "positive_state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state",
+  "cases": [
+    {
+      "case": "policy_exact_match",
+      "expected_status": "verified",
+      "actual_status": "verified",
+      "returncode": 0,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state",
+      "verification": {
+        "returncode": 0,
+        "result": {
+          "status": "verified",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state/attestations/1-0xabc123-0-9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39.json",
+          "attestationHash": "9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39"
+        }
+      }
+    },
+    {
+      "case": "provider_type_mismatch",
+      "expected_status": "verifier_mismatch",
+      "actual_status": "verifier_mismatch",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "verifier_mismatch",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state/attestations/1-0xabc123-0-9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39.json",
+          "field": "providerType",
+          "expected": "sgx-dcap-v3-gramine",
+          "actual": "sgx-dcap"
+        }
+      }
+    },
+    {
+      "case": "measurement_mismatch",
+      "expected_status": "verifier_mismatch",
+      "actual_status": "verifier_mismatch",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "verifier_mismatch",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state/attestations/1-0xabc123-0-9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39.json",
+          "field": "measurement",
+          "expected": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+          "actual": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        }
+      }
+    },
+    {
+      "case": "quote_format_mismatch",
+      "expected_status": "verifier_mismatch",
+      "actual_status": "verifier_mismatch",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "verifier_mismatch",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state/attestations/1-0xabc123-0-9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39.json",
+          "field": "quoteFormat",
+          "expected": "mock-quote",
+          "actual": "sgx-dcap-v3"
+        }
+      }
+    },
+    {
+      "case": "binding_enabled_exact_match",
+      "expected_status": "verified",
+      "actual_status": "verified",
+      "returncode": 0,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state",
+      "verification": {
+        "returncode": 0,
+        "result": {
+          "status": "verified",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/positive_state/attestations/1-0xabc123-0-9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39.json",
+          "attestationHash": "9fc0729e60763bc77066fe9e9986a5008577d2da88fdce388f429a9509234b39"
+        }
+      }
+    },
+    {
+      "case": "report_data_mismatch",
+      "expected_status": "report_data_mismatch",
+      "actual_status": "report_data_mismatch",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/cases/tampered_binding",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "report_data_mismatch",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/cases/tampered_binding/attestations/1-0xabc123-0-4c894409c2c54cac615b9565257fdcd2485e6da5132beda551a48d959e22ffb7.json",
+          "message": "SGX quote report_data does not match sha256(eventKey + manifestHash + evidenceRoot)"
+        }
+      }
+    },
+    {
+      "case": "sgx_quote_invalid_hex",
+      "expected_status": "sgx_quote_invalid",
+      "actual_status": "sgx_quote_invalid",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/cases/malformed_quote",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "sgx_quote_invalid",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/cases/malformed_quote/attestations/1-0xabc123-0-51c955bb42be13cb2d4f15dcd5ca28a7db3f66bec02fdf3e3bd30a428687f420.json",
+          "message": "quote is not valid hex"
+        }
+      }
+    },
+    {
+      "case": "sgx_quote_invalid_version",
+      "expected_status": "sgx_quote_invalid",
+      "actual_status": "sgx_quote_invalid",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/cases/wrong_version_quote",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "sgx_quote_invalid",
+          "eventKey": "0xabc123:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_policy_matrix/cases/wrong_version_quote/attestations/1-0xabc123-0-bde5a656f6a490f600d6c229982eab77539300728ab93df872bf5a7b608709c7.json",
+          "message": "expected quote version 3, got 4"
+        }
+      }
+    }
+  ],
+  "detected_expected_count": 8,
+  "total_cases": 8
+}

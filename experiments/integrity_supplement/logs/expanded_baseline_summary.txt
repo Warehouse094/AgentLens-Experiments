@@ -1,0 +1,202 @@
+{
+  "experiment": "20_expanded_prospective_baselines",
+  "best_method_by_auc": "stacked_logistic_baseline",
+  "best_method_auc": 0.8705,
+  "best_non_the framework_method": "stacked_logistic_baseline",
+  "the framework_auc": 0.8676,
+  "the framework_vs_best_non_the framework_delta_auc": -0.003,
+  "the framework_vs_best_non_the framework_delta_auc_ci": {
+    "lower": -0.0496,
+    "upper": 0.0424
+  },
+  "the framework_vs_best_non_the framework_p_value": 0.953,
+  "leaderboard": [
+    {
+      "method": "stacked_logistic_baseline",
+      "auc": 0.8705,
+      "average_precision": 0.9048
+    },
+    {
+      "method": "the framework_full",
+      "auc": 0.8676,
+      "average_precision": 0.8774
+    },
+    {
+      "method": "mean_historical",
+      "auc": 0.8621,
+      "average_precision": 0.891
+    },
+    {
+      "method": "domain_conditioned_history",
+      "auc": 0.8621,
+      "average_precision": 0.891
+    },
+    {
+      "method": "ema_score",
+      "auc": 0.8568,
+      "average_precision": 0.8806
+    },
+    {
+      "method": "no_verification",
+      "auc": 0.7931,
+      "average_precision": 0.8666
+    },
+    {
+      "method": "llm_as_judge_only",
+      "auc": 0.7883,
+      "average_precision": 0.8555
+    },
+    {
+      "method": "onchain_reputation_only",
+      "auc": 0.7583,
+      "average_precision": 0.8475
+    },
+    {
+      "method": "human_only_review",
+      "auc": 0.7137,
+      "average_precision": 0.8327
+    },
+    {
+      "method": "latest_score_only",
+      "auc": 0.6721,
+      "average_precision": 0.792
+    },
+    {
+      "method": "beta_reputation",
+      "auc": 0.5632,
+      "average_precision": 0.7672
+    },
+    {
+      "method": "no_appeal",
+      "auc": 0.5211,
+      "average_precision": 0.6595
+    },
+    {
+      "method": "elo_glicko",
+      "auc": 0.3882,
+      "average_precision": 0.6191
+    }
+  ],
+  "comparisons": {
+    "latest_score_only": {
+      "auc": 0.6721,
+      "average_precision": 0.792,
+      "delta_auc_vs_the framework": 0.1955,
+      "delta_auc_ci_vs_the framework": {
+        "lower": 0.1433,
+        "upper": 0.2494
+      },
+      "paired_permutation_p_value_vs_the framework": 0.0005
+    },
+    "mean_historical": {
+      "auc": 0.8621,
+      "average_precision": 0.891,
+      "delta_auc_vs_the framework": 0.0055,
+      "delta_auc_ci_vs_the framework": {
+        "lower": -0.0365,
+        "upper": 0.0488
+      },
+      "paired_permutation_p_value_vs_the framework": 0.8121
+    },
+    "ema_score": {
+      "auc": 0.8568,
+      "average_precision": 0.8806,
+      "delta_auc_vs_the framework": 0.0108,
+      "delta_auc_ci_vs_the framework": {
+        "lower": -0.0351,
+        "upper": 0.0565
+      },
+      "paired_permutation_p_value_vs_the framework": 0.6347
+    },
+    "beta_reputation": {
+      "auc": 0.5632,
+      "average_precision": 0.7672,
+      "delta_auc_vs_the framework": 0.3043,
+      "delta_auc_ci_vs_the framework": {
+        "lower": 0.2369,
+        "upper": 0.371
+      },
+      "paired_permutation_p_value_vs_the framework": 0.0005
+    },
+    "elo_glicko": {
+      "auc": 0.3882,
+      "average_precision": 0.6191,
+      "delta_auc_vs_the framework": 0.4794,
+      "delta_auc_ci_vs_the framework": {
+        "lower": 0.4072,
+        "upper": 0.5456
+      },
+      "paired_permutation_p_value_vs_the framework": 0.0005
+    },
+    "human_only_review": {
+      "auc": 0.7137,
+      "average_precision": 0.8327,
+      "delta_auc_vs_the framework": 0.1539,
+      "delta_auc_ci_vs_the framework": {
+        "lower": 0.0883,
+        "upper": 0.2212
+      },
+      "paired_permutation_p_value_vs_the framework": 0.0005
+    },
+    "llm_as_judge_only": {
+      "auc": 0.7883,
+      "average_precision": 0.8555,
+      "delta_auc_vs_the framework": 0.0793,
+      "delta_auc_ci_vs_the framework": {
+        "lower": 0.0387,
+        "upper": 0.126
+      },
+      "paired_permutation_p_value_vs_the framework": 0.0005
+    },
+    "onchain_reputation_only": {
+      "auc": 0.7583,
+      "average_precision": 0.8475,
+      "delta_auc_vs_the framework": 0.1093,
+      "delta_auc_ci_vs_the framework": {
+        "lower": 0.0616,
+        "upper": 0.1597
+      },
+      "paired_permutation_p_value_vs_the framework": 0.0005
+    },
+    "no_appeal": {
+      "auc": 0.5211,
+      "average_precision": 0.6595,
+      "delta_auc_vs_the framework": 0.3464,
+      "delta_auc_ci_vs_the framework": {
+        "lower": 0.2744,
+        "upper": 0.4173
+      },
+      "paired_permutation_p_value_vs_the framework": 0.0005
+    },
+    "no_verification": {
+      "auc": 0.7931,
+      "average_precision": 0.8666,
+      "delta_auc_vs_the framework": 0.0745,
+      "delta_auc_ci_vs_the framework": {
+        "lower": 0.0265,
+        "upper": 0.1213
+      },
+      "paired_permutation_p_value_vs_the framework": 0.005
+    },
+    "stacked_logistic_baseline": {
+      "auc": 0.8705,
+      "average_precision": 0.9048,
+      "delta_auc_vs_the framework": -0.003,
+      "delta_auc_ci_vs_the framework": {
+        "lower": -0.0482,
+        "upper": 0.0417
+      },
+      "paired_permutation_p_value_vs_the framework": 0.9535
+    },
+    "domain_conditioned_history": {
+      "auc": 0.8621,
+      "average_precision": 0.891,
+      "delta_auc_vs_the framework": 0.0055,
+      "delta_auc_ci_vs_the framework": {
+        "lower": -0.0367,
+        "upper": 0.0457
+      },
+      "paired_permutation_p_value_vs_the framework": 0.8061
+    }
+  }
+}

@@ -1,0 +1,511 @@
+{
+  "experiment": "21_independent_evaluator_transfer",
+  "source": "package external evaluators with frozen held-out transfer framing",
+  "n_episode_dimension_units": 450,
+  "n_external_judgements": 1350,
+  "n_external_agents": 3,
+  "n_domains": 5,
+  "frozen_threshold": 60.0,
+  "target_definition": "Three-agent external consensus at the episode-dimension level; secondary slices reported by individual held-out evaluator and by domain.",
+  "consensus_label_counts": {
+    "pass": 282,
+    "fail": 168
+  },
+  "consensus_agreement_rate": {
+    "mean": 0.9207,
+    "full_unanimity_rate": 0.7622,
+    "min": 0.6667
+  },
+  "methods": {
+    "the framework_full": {
+      "auroc": 0.576,
+      "auroc_ci": {
+        "lower": 0.5238,
+        "upper": 0.6277
+      },
+      "threshold_metrics": {
+        "precision": 0.3826,
+        "recall": 0.3393,
+        "f1_score": 0.3596,
+        "accuracy": 0.5489,
+        "flagged_rate": 0.3311
+      },
+      "binary_agreement": 0.5489,
+      "brier_score": 0.2279,
+      "expected_calibration_error": 0.1181,
+      "mean_score": 66.95
+    },
+    "latest_score_only": {
+      "auroc": 0.5807,
+      "auroc_ci": {
+        "lower": 0.5241,
+        "upper": 0.6361
+      },
+      "threshold_metrics": {
+        "precision": 0.4783,
+        "recall": 0.2619,
+        "f1_score": 0.3385,
+        "accuracy": 0.6178,
+        "flagged_rate": 0.2044
+      },
+      "binary_agreement": 0.6178,
+      "brier_score": 0.254,
+      "expected_calibration_error": 0.1723,
+      "mean_score": 73.24
+    },
+    "mean_historical": {
+      "auroc": 0.4988,
+      "auroc_ci": {
+        "lower": 0.4454,
+        "upper": 0.5524
+      },
+      "threshold_metrics": {
+        "precision": 0.2469,
+        "recall": 0.119,
+        "f1_score": 0.1606,
+        "accuracy": 0.5356,
+        "flagged_rate": 0.18
+      },
+      "binary_agreement": 0.5356,
+      "brier_score": 0.2236,
+      "expected_calibration_error": 0.1579,
+      "mean_score": 66.76
+    },
+    "ema_score": {
+      "auroc": 0.505,
+      "auroc_ci": {
+        "lower": 0.451,
+        "upper": 0.5585
+      },
+      "threshold_metrics": {
+        "precision": 0.2812,
+        "recall": 0.1607,
+        "f1_score": 0.2045,
+        "accuracy": 0.5333,
+        "flagged_rate": 0.2133
+      },
+      "binary_agreement": 0.5333,
+      "brier_score": 0.2261,
+      "expected_calibration_error": 0.1545,
+      "mean_score": 66.97
+    },
+    "llm_as_judge_only": {
+      "auroc": 0.753,
+      "auroc_ci": {
+        "lower": 0.704,
+        "upper": 0.7979
+      },
+      "threshold_metrics": {
+        "precision": 0.7692,
+        "recall": 0.119,
+        "f1_score": 0.2062,
+        "accuracy": 0.6578,
+        "flagged_rate": 0.0578
+      },
+      "binary_agreement": 0.6578,
+      "brier_score": 0.2224,
+      "expected_calibration_error": 0.132,
+      "mean_score": 75.74
+    },
+    "no_verification": {
+      "auroc": 0.6746,
+      "auroc_ci": {
+        "lower": 0.6219,
+        "upper": 0.7258
+      },
+      "threshold_metrics": {
+        "precision": 0.8421,
+        "recall": 0.0952,
+        "f1_score": 0.1711,
+        "accuracy": 0.6556,
+        "flagged_rate": 0.0422
+      },
+      "binary_agreement": 0.6556,
+      "brier_score": 0.2338,
+      "expected_calibration_error": 0.1378,
+      "mean_score": 76.44
+    }
+  },
+  "per_external_agent": {
+    "the framework_full": {
+      "claude-3-opus": {
+        "n": 450,
+        "binary_agreement": 0.5511,
+        "auroc": 0.5742,
+        "mean_score": 66.95,
+        "fail_rate": 0.3533
+      },
+      "gemini-1.5-pro": {
+        "n": 450,
+        "binary_agreement": 0.5489,
+        "auroc": 0.6051,
+        "mean_score": 66.95,
+        "fail_rate": 0.4133
+      },
+      "gpt-4-turbo": {
+        "n": 450,
+        "binary_agreement": 0.5533,
+        "auroc": 0.5739,
+        "mean_score": 66.95,
+        "fail_rate": 0.3511
+      }
+    },
+    "latest_score_only": {
+      "claude-3-opus": {
+        "n": 450,
+        "binary_agreement": 0.62,
+        "auroc": 0.563,
+        "mean_score": 73.24,
+        "fail_rate": 0.3533
+      },
+      "gemini-1.5-pro": {
+        "n": 450,
+        "binary_agreement": 0.5867,
+        "auroc": 0.5869,
+        "mean_score": 73.24,
+        "fail_rate": 0.4133
+      },
+      "gpt-4-turbo": {
+        "n": 450,
+        "binary_agreement": 0.6222,
+        "auroc": 0.5493,
+        "mean_score": 73.24,
+        "fail_rate": 0.3511
+      }
+    },
+    "mean_historical": {
+      "claude-3-opus": {
+        "n": 450,
+        "binary_agreement": 0.5378,
+        "auroc": 0.5005,
+        "mean_score": 66.76,
+        "fail_rate": 0.3533
+      },
+      "gemini-1.5-pro": {
+        "n": 450,
+        "binary_agreement": 0.5133,
+        "auroc": 0.537,
+        "mean_score": 66.76,
+        "fail_rate": 0.4133
+      },
+      "gpt-4-turbo": {
+        "n": 450,
+        "binary_agreement": 0.5667,
+        "auroc": 0.5185,
+        "mean_score": 66.76,
+        "fail_rate": 0.3511
+      }
+    },
+    "ema_score": {
+      "claude-3-opus": {
+        "n": 450,
+        "binary_agreement": 0.5578,
+        "auroc": 0.5184,
+        "mean_score": 66.97,
+        "fail_rate": 0.3533
+      },
+      "gemini-1.5-pro": {
+        "n": 450,
+        "binary_agreement": 0.52,
+        "auroc": 0.5488,
+        "mean_score": 66.97,
+        "fail_rate": 0.4133
+      },
+      "gpt-4-turbo": {
+        "n": 450,
+        "binary_agreement": 0.5733,
+        "auroc": 0.5345,
+        "mean_score": 66.97,
+        "fail_rate": 0.3511
+      }
+    },
+    "llm_as_judge_only": {
+      "claude-3-opus": {
+        "n": 450,
+        "binary_agreement": 0.6644,
+        "auroc": 0.6975,
+        "mean_score": 75.74,
+        "fail_rate": 0.3533
+      },
+      "gemini-1.5-pro": {
+        "n": 450,
+        "binary_agreement": 0.6222,
+        "auroc": 0.7476,
+        "mean_score": 75.74,
+        "fail_rate": 0.4133
+      },
+      "gpt-4-turbo": {
+        "n": 450,
+        "binary_agreement": 0.6533,
+        "auroc": 0.6956,
+        "mean_score": 75.74,
+        "fail_rate": 0.3511
+      }
+    },
+    "no_verification": {
+      "claude-3-opus": {
+        "n": 450,
+        "binary_agreement": 0.6622,
+        "auroc": 0.6301,
+        "mean_score": 76.44,
+        "fail_rate": 0.3533
+      },
+      "gemini-1.5-pro": {
+        "n": 450,
+        "binary_agreement": 0.6156,
+        "auroc": 0.6999,
+        "mean_score": 76.44,
+        "fail_rate": 0.4133
+      },
+      "gpt-4-turbo": {
+        "n": 450,
+        "binary_agreement": 0.6556,
+        "auroc": 0.6239,
+        "mean_score": 76.44,
+        "fail_rate": 0.3511
+      }
+    }
+  },
+  "per_domain": {
+    "the framework_full": {
+      "DAO operations": {
+        "n": 90,
+        "binary_agreement": 0.5778,
+        "auroc": 0.5253,
+        "mean_score": 67.7,
+        "fail_rate": 0.3333
+      },
+      "DeFi risk monitoring": {
+        "n": 90,
+        "binary_agreement": 0.5111,
+        "auroc": 0.6081,
+        "mean_score": 67.18,
+        "fail_rate": 0.3889
+      },
+      "Incident response": {
+        "n": 90,
+        "binary_agreement": 0.5222,
+        "auroc": 0.6261,
+        "mean_score": 64.81,
+        "fail_rate": 0.3556
+      },
+      "Smart-contract release review": {
+        "n": 90,
+        "binary_agreement": 0.5222,
+        "auroc": 0.5236,
+        "mean_score": 67.8,
+        "fail_rate": 0.3889
+      },
+      "Wallet authorization guard": {
+        "n": 90,
+        "binary_agreement": 0.6111,
+        "auroc": 0.6052,
+        "mean_score": 67.25,
+        "fail_rate": 0.4
+      }
+    },
+    "latest_score_only": {
+      "DAO operations": {
+        "n": 90,
+        "binary_agreement": 0.6556,
+        "auroc": 0.5744,
+        "mean_score": 75.06,
+        "fail_rate": 0.3333
+      },
+      "DeFi risk monitoring": {
+        "n": 90,
+        "binary_agreement": 0.6111,
+        "auroc": 0.5764,
+        "mean_score": 74.02,
+        "fail_rate": 0.3889
+      },
+      "Incident response": {
+        "n": 90,
+        "binary_agreement": 0.6333,
+        "auroc": 0.6517,
+        "mean_score": 69.87,
+        "fail_rate": 0.3556
+      },
+      "Smart-contract release review": {
+        "n": 90,
+        "binary_agreement": 0.6222,
+        "auroc": 0.5979,
+        "mean_score": 71.86,
+        "fail_rate": 0.3889
+      },
+      "Wallet authorization guard": {
+        "n": 90,
+        "binary_agreement": 0.5667,
+        "auroc": 0.5121,
+        "mean_score": 75.42,
+        "fail_rate": 0.4
+      }
+    },
+    "mean_historical": {
+      "DAO operations": {
+        "n": 90,
+        "binary_agreement": 0.6111,
+        "auroc": 0.3872,
+        "mean_score": 68.55,
+        "fail_rate": 0.3333
+      },
+      "DeFi risk monitoring": {
+        "n": 90,
+        "binary_agreement": 0.4556,
+        "auroc": 0.4784,
+        "mean_score": 66.18,
+        "fail_rate": 0.3889
+      },
+      "Incident response": {
+        "n": 90,
+        "binary_agreement": 0.3333,
+        "auroc": 0.4585,
+        "mean_score": 64.53,
+        "fail_rate": 0.3556
+      },
+      "Smart-contract release review": {
+        "n": 90,
+        "binary_agreement": 0.6333,
+        "auroc": 0.4203,
+        "mean_score": 68.25,
+        "fail_rate": 0.3889
+      },
+      "Wallet authorization guard": {
+        "n": 90,
+        "binary_agreement": 0.6444,
+        "auroc": 0.5093,
+        "mean_score": 66.32,
+        "fail_rate": 0.4
+      }
+    },
+    "ema_score": {
+      "DAO operations": {
+        "n": 90,
+        "binary_agreement": 0.5556,
+        "auroc": 0.4061,
+        "mean_score": 68.2,
+        "fail_rate": 0.3333
+      },
+      "DeFi risk monitoring": {
+        "n": 90,
+        "binary_agreement": 0.4667,
+        "auroc": 0.5127,
+        "mean_score": 66.97,
+        "fail_rate": 0.3889
+      },
+      "Incident response": {
+        "n": 90,
+        "binary_agreement": 0.4556,
+        "auroc": 0.5345,
+        "mean_score": 64.82,
+        "fail_rate": 0.3556
+      },
+      "Smart-contract release review": {
+        "n": 90,
+        "binary_agreement": 0.5556,
+        "auroc": 0.4509,
+        "mean_score": 67.91,
+        "fail_rate": 0.3889
+      },
+      "Wallet authorization guard": {
+        "n": 90,
+        "binary_agreement": 0.6333,
+        "auroc": 0.5509,
+        "mean_score": 66.95,
+        "fail_rate": 0.4
+      }
+    },
+    "llm_as_judge_only": {
+      "DAO operations": {
+        "n": 90,
+        "binary_agreement": 0.7111,
+        "auroc": 0.7514,
+        "mean_score": 75.12,
+        "fail_rate": 0.3333
+      },
+      "DeFi risk monitoring": {
+        "n": 90,
+        "binary_agreement": 0.6444,
+        "auroc": 0.747,
+        "mean_score": 75.91,
+        "fail_rate": 0.3889
+      },
+      "Incident response": {
+        "n": 90,
+        "binary_agreement": 0.6778,
+        "auroc": 0.8055,
+        "mean_score": 73.04,
+        "fail_rate": 0.3556
+      },
+      "Smart-contract release review": {
+        "n": 90,
+        "binary_agreement": 0.6444,
+        "auroc": 0.7722,
+        "mean_score": 76.15,
+        "fail_rate": 0.3889
+      },
+      "Wallet authorization guard": {
+        "n": 90,
+        "binary_agreement": 0.6111,
+        "auroc": 0.7418,
+        "mean_score": 78.49,
+        "fail_rate": 0.4
+      }
+    },
+    "no_verification": {
+      "DAO operations": {
+        "n": 90,
+        "binary_agreement": 0.7111,
+        "auroc": 0.6422,
+        "mean_score": 76.08,
+        "fail_rate": 0.3333
+      },
+      "DeFi risk monitoring": {
+        "n": 90,
+        "binary_agreement": 0.6444,
+        "auroc": 0.6644,
+        "mean_score": 76.69,
+        "fail_rate": 0.3889
+      },
+      "Incident response": {
+        "n": 90,
+        "binary_agreement": 0.6778,
+        "auroc": 0.7753,
+        "mean_score": 74.68,
+        "fail_rate": 0.3556
+      },
+      "Smart-contract release review": {
+        "n": 90,
+        "binary_agreement": 0.6333,
+        "auroc": 0.6413,
+        "mean_score": 76.81,
+        "fail_rate": 0.3889
+      },
+      "Wallet authorization guard": {
+        "n": 90,
+        "binary_agreement": 0.6111,
+        "auroc": 0.6667,
+        "mean_score": 77.97,
+        "fail_rate": 0.4
+      }
+    }
+  },
+  "the framework_slice_stability": {
+    "mean_external_agent_agreement": 0.5511,
+    "worst_external_agent_agreement": 0.5489,
+    "mean_domain_agreement": 0.5489,
+    "worst_domain_agreement": 0.5111
+  },
+  "best_baseline_by_agreement": {
+    "name": "llm_as_judge_only",
+    "binary_agreement": 0.6578,
+    "delta_vs_the framework": -0.1089
+  },
+  "best_baseline_by_auroc": {
+    "name": "llm_as_judge_only",
+    "auroc": 0.753,
+    "delta_vs_the framework": -0.177
+  },
+  "claim_boundary": "Independent evaluator transfer only; this is stronger than static within-package agreement summaries but does not establish open-world benchmark validation.",
+  "conclusion": "MARGINAL"
+}

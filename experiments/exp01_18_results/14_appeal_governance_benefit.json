@@ -1,0 +1,23 @@
+{
+  "experiment": "14_appeal_governance_benefit",
+  "false_penalty_correction_rate": 1.0,
+  "false_penalty_correction_rate_ci": {
+    "lower": 1.0,
+    "upper": 1.0
+  },
+  "malicious_rejection_rate": 1.0,
+  "malicious_rejection_rate_ci": {
+    "lower": 1.0,
+    "upper": 1.0
+  },
+  "net_reputation_change": "2770",
+  "governance_accuracy": 1.0,
+  "appeal_types_tested": 4,
+  "governance_confusion_style_summary": {
+    "true_corrections": 50,
+    "partial_corrections": 50,
+    "correct_malicious_rejections": 50,
+    "correct_evidence_rejections": 50
+  },
+  "conclusion": "PASS"
+}

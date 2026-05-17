@@ -1,0 +1,19 @@
+held_out_evaluator,remaining_evaluators,n_units,method,binary_agreement,auroc,mean_score
+gemini-2.5-flash,2,120,the framework_full,0.7417,0.5,66.97
+gemini-2.5-flash,2,120,latest_score_only,1.0,0.5,94.0
+gemini-2.5-flash,2,120,mean_historical,0.9917,0.5,75.32
+gemini-2.5-flash,2,120,llm_as_judge_only,0.625,0.5,62.35
+gemini-2.5-flash,2,120,no_verification,0.7417,0.5,66.97
+gemini-2.5-flash,2,120,stacked_logistic_baseline,0.3417,0.5,34.52
+gpt-4.1-mini,2,120,the framework_full,0.7417,0.5,66.97
+gpt-4.1-mini,2,120,latest_score_only,1.0,0.5,94.0
+gpt-4.1-mini,2,120,mean_historical,0.9917,0.5,75.32
+gpt-4.1-mini,2,120,llm_as_judge_only,0.625,0.5,62.35
+gpt-4.1-mini,2,120,no_verification,0.7417,0.5,66.97
+gpt-4.1-mini,2,120,stacked_logistic_baseline,0.3417,0.5,34.52
+gpt-4.1-nano,2,120,the framework_full,0.725,0.4492,66.97
+gpt-4.1-nano,2,120,latest_score_only,0.9833,0.5,94.0
+gpt-4.1-nano,2,120,mean_historical,0.975,0.4449,75.32
+gpt-4.1-nano,2,120,llm_as_judge_only,0.625,0.625,62.35
+gpt-4.1-nano,2,120,no_verification,0.725,0.4492,66.97
+gpt-4.1-nano,2,120,stacked_logistic_baseline,0.3417,0.4831,34.52

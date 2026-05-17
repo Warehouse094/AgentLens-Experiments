@@ -1,0 +1,15 @@
+{
+  "experiment": "03_variant_discrimination",
+  "F_statistic": 223.76,
+  "p_value": "4.49e-105",
+  "eta_squared": 0.6679,
+  "variant_means": {
+    "EnvironmentBrittle": 63.0508,
+    "HighTaskLowSecurity": 60.8489,
+    "Normal": 84.0912,
+    "OverPermissioned": 61.2502,
+    "PolicyViolating": 65.5074
+  },
+  "max_separation": 23.24,
+  "conclusion": "PASS"
+}

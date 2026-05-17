@@ -1,0 +1,65 @@
+{
+  "bundle": "the framework_external_generalization_bundle",
+  "canonical_source_root": "[REDACTED_PATH]",
+  "experiments": {
+    "Exp19": "external benchmark transfer under frozen mechanical mapping",
+    "Exp20": "external archived-source executability and boundary evidence",
+    "Exp21": "independent evaluator transfer on package episodes",
+    "Exp22": "ambiguity-bearing ATBench hard-slice stress test",
+    "Exp23": "ATBench ambiguity subset with fresh independent evaluator consensus",
+    "Exp24": "appeal ambiguity stress test on mixed-evidence governance cases",
+    "Exp25": "human reliability recalculation with corrected bootstrap intervals",
+    "Exp26": "domain-held-out external-consensus transfer readout",
+    "Exp27": "human-system divergence taxonomy over mismatch cases"
+  },
+  "high_level_verdict": "Substantially stronger but still bounded external-generalization evidence; sufficient to reduce externality from a fatal weakness to a defended limitation, but not sufficient for open-world robustness claims.",
+  "copied": {
+    "data": [
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]"
+    ],
+    "results": [
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]"
+    ],
+    "scripts": [
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]",
+      "[REDACTED_PATH]"
+    ],
+    "figures": []
+  },
+  "missing_expected_results": []
+}

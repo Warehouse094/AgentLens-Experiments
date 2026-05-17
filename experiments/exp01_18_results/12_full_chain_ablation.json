@@ -1,0 +1,24 @@
+{
+  "experiment": "12_full_chain_ablation",
+  "full_system_mean": 66.95,
+  "no_appeal_mean": 53.46,
+  "no_verification_mean": 76.44,
+  "appeal_contribution": 13.49,
+  "appeal_contribution_ci": {
+    "lower": 11.6976,
+    "upper": 15.4269
+  },
+  "verification_contribution": -9.5,
+  "verification_contribution_ci": {
+    "lower": -10.4242,
+    "upper": -8.5843
+  },
+  "appeal_t_stat": 14.31,
+  "appeal_p_value": "1.56e-38",
+  "verification_t_stat": -19.83,
+  "verification_p_value": "2.57e-63",
+  "pv_full": 65.51,
+  "pv_no_verification": 80.22,
+  "verification_helps_detect_pv": 14.71,
+  "conclusion": "PASS"
+}

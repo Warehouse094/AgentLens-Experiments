@@ -1,0 +1,23 @@
+{
+  "experiment": "15_malicious_governance_attack",
+  "total_attack_attempts": 100,
+  "attacks_blocked": 100,
+  "attack_block_rate": 1.0,
+  "manipulation_detection_rate": 1.0,
+  "mean_attacker_penalty": -5.0,
+  "attack_type_breakdown": {
+    "insufficient_evidence": {
+      "attempts": 50,
+      "blocked": 50,
+      "block_rate": 1.0,
+      "mean_penalty": 0.0
+    },
+    "malicious_appeal": {
+      "attempts": 50,
+      "blocked": 50,
+      "block_rate": 1.0,
+      "mean_penalty": -10.0
+    }
+  },
+  "conclusion": "PASS"
+}

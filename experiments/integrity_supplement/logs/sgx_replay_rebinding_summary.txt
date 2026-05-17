@@ -1,0 +1,112 @@
+{
+  "experiment": "23_sgx_replay_rebinding",
+  "cases": [
+    {
+      "case": "original_event_a",
+      "expected_status": "verified",
+      "actual_status": "verified",
+      "returncode": 0,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/positive_event_a",
+      "note": "positive control for event A",
+      "verification": {
+        "returncode": 0,
+        "result": {
+          "status": "verified",
+          "eventKey": "0xabc111:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/positive_event_a/attestations/1-0xabc111-0-5ced22a3970738083054fe609501bd0feb9fac1758c1b01fcf52168f4899e893.json",
+          "attestationHash": "5ced22a3970738083054fe609501bd0feb9fac1758c1b01fcf52168f4899e893"
+        }
+      }
+    },
+    {
+      "case": "original_event_b",
+      "expected_status": "verified",
+      "actual_status": "verified",
+      "returncode": 0,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/positive_event_b",
+      "note": "positive control for event B",
+      "verification": {
+        "returncode": 0,
+        "result": {
+          "status": "verified",
+          "eventKey": "0xabc222:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/positive_event_b/attestations/2-0xabc222-0-8f272ce914e3793e6f8d4e31edfdb29bb723eeb90b0762533f7339fcac7478e6.json",
+          "attestationHash": "8f272ce914e3793e6f8d4e31edfdb29bb723eeb90b0762533f7339fcac7478e6"
+        }
+      }
+    },
+    {
+      "case": "event_b_with_replayed_quote",
+      "expected_status": "report_data_mismatch",
+      "actual_status": "report_data_mismatch",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/event_b_with_replayed_quote",
+      "note": "event B payload with quote replayed from event A",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "report_data_mismatch",
+          "eventKey": "0xabc222:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/event_b_with_replayed_quote/attestations/2-0xabc222-0-2a2a5bdff971b38ace86ae120b46a84ae094c9bfb0f0c140b0299643b3123763.json",
+          "message": "SGX quote report_data does not match sha256(eventKey + manifestHash + evidenceRoot)"
+        }
+      }
+    },
+    {
+      "case": "event_b_with_replayed_quote_and_spk",
+      "expected_status": "report_data_mismatch",
+      "actual_status": "report_data_mismatch",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/event_b_with_replayed_quote_and_spk",
+      "note": "event B payload with quote and session key replayed from event A",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "report_data_mismatch",
+          "eventKey": "0xabc222:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/event_b_with_replayed_quote_and_spk/attestations/2-0xabc222-0-dd2b2da7b59701be4ddac422082fde030bb64523de29e194c477d4c8446e5a80.json",
+          "message": "SGX quote report_data does not match sha256(eventKey + manifestHash + evidenceRoot)"
+        }
+      }
+    },
+    {
+      "case": "namespace_only_replay_gap",
+      "expected_status": "verified",
+      "actual_status": "verified",
+      "returncode": 0,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/namespace_only_replay_gap",
+      "note": "file is rebound into event B namespace while attestation payload still references event A",
+      "verification": {
+        "returncode": 0,
+        "result": {
+          "status": "verified",
+          "eventKey": "0xabc222:0",
+          "attestationFilePath": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/namespace_only_replay_gap/attestations/2-0xabc222-0-05dea377ab6cc8fbf33bce6f513192ab6fb9b7725f1262849d239014a81353f1.json",
+          "attestationHash": "05dea377ab6cc8fbf33bce6f513192ab6fb9b7725f1262849d239014a81353f1"
+        }
+      }
+    },
+    {
+      "case": "duplicate_attestation_conflict",
+      "expected_status": "conflict",
+      "actual_status": "conflict",
+      "returncode": 1,
+      "state_dir": "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/duplicate_attestation_conflict",
+      "note": "duplicate attestation files for same event namespace",
+      "verification": {
+        "returncode": 1,
+        "result": {
+          "status": "conflict",
+          "eventKey": "0xabc222:0",
+          "matches": [
+            "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/duplicate_attestation_conflict/attestations/2-0xabc222-0-8f272ce914e3793e6f8d4e31edfdb29bb723eeb90b0762533f7339fcac7478e6.json",
+            "/tmp/the framework_revision_bundle/tee/sgx_replay_cases/duplicate_attestation_conflict/attestations/999-0xabc222-0-8f272ce914e3793e6f8d4e31edfdb29bb723eeb90b0762533f7339fcac7478e6.json"
+          ]
+        }
+      }
+    }
+  ],
+  "detected_expected_count": 6,
+  "total_cases": 6,
+  "security_observation": "namespace_only_replay_gap shows current verifier behavior when filename event namespace is rebound without aligning attestation payload fields to the requested event key"
+}
